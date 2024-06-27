@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 }
+
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
@@ -12,55 +13,58 @@ body {
     background-color: #DEEEF1;
 }
 
-/* css for header started here */
 /* Fixed header styles */
 .fixed-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #CDB9DF;
+    background-color: #0C1A1A;
     color: #fff;
     padding: 10px 60px 10px 147px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .fixed-header .logo a {
     color: #fff;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
-    display: inline-block; /* Ensures "Unemployed" and "Online" are in the same line */
+    display: inline-block;
 }
+
 .fixed-header .logo .name {
-    color: #000; /* Black color for "Unemployed" */
+    color: #ffffff;
 }
+
 .fixed-header .logo .surname {
-    color: #4CAF50; /* Green color for "Online" */
-    
+    color: #4CAF50;
 }
+
 .fixed-header .auth {
-    margin-right: 50px; /* Adjusted margin for the entire .auth block */
-    
+    margin-right: 50px;
 }
+
 .fixed-header .auth .btn {
     padding: 8px 16px;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
 }
+
 .fixed-header .auth .contact-link {
     padding: 8px 16px;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    margin-right: 60px; /* Space between Log In/Register and Contact Us */
+    margin-right: 60px;
 }
 /* Content area styles */
 .content {
