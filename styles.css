@@ -80,25 +80,41 @@ body {
 /* css for header ended here  */
 /* first section css started here */
 .firstSection {
-    display: flex;
-    justify-content: space-between; 
+    /* display: flex;
+    justify-content:space-around; 
     align-items: center;
-    width: auto;      
-    margin-left: 105px;
+    width: auto;      */
+    margin-left: 50px;
     margin-right: 51px;
-    margin-top: 149px;
+    margin-top: 129px; 
+    display: flex;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 .leftSection {
-    font-size: 75px;
+    font-size: 55px;
+    /* font-size: 75px;
     width: 684px;
     height: 747px;
-    padding-top: 29px;
+    padding-top: 29px; */
+    padding: 20px;
+    flex: 1;
+}
+.rightSection {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .rightSection img {
-    width: 672px; /* Set the width to 672px */
-    height: 747px; /* Set the height to 747px */
-    border: 2px solid white; /* Adjusted border styling */
-    border-radius: 15px;
+    /* width: 672px; 
+    height: 747px; */
+    max-width: 100%;
+    border: 2px solid white; 
+    border-radius: 50px; 
+    height: auto;
+    padding: 20px;
+    flex: 1;
 }
 .green {
     color: #4CAF50;
@@ -117,7 +133,7 @@ body {
     font-family: 'Anek Devanagari', sans-serif;
     color: grey;
     padding-top: 45px;
-    width: 584px;
+    /* width: 584px; */
 }
 .textBlock2 p {
     font-size: 32px;
@@ -126,8 +142,8 @@ body {
 .textBlock3 p {
     font-size: 24px;
     padding-top: 31px;
-    height: 216px;
-    width: 629px;
+    /* height: 216px;
+    width: 629px; */
 }
 /* first section css ended here */
  
