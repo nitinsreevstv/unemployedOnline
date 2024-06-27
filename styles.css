@@ -146,4 +146,61 @@ body {
     width: 629px; */
 }
 /* first section css ended here */
- 
+
+
+
+/* footer section */
+footer {
+    background-color: #0C1A1A;
+}
+
+.footer {
+    display: flex;
+    padding: 23px 122px;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer > div {
+    width: 223px;
+}
+.footer .footerFirst a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+footer .footer-rights {
+    text-align: center;
+    padding: 12px 0;
+    color: rgb(255, 255, 255);
+}
+.footer .footerFirst .name {
+    color: #ffffff; /* Black color for "Unemployed" */
+}
+.footer .footerFirst .surname {
+    color: #4CAF50; /* Green color for "Online" */
+    
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px; /* Reduce padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        align-items: center; /* Center align items in column */
+    }
+
+    .footer > div {
+        width: 100%; /* Make each column full width */
+        margin-bottom: 20px; /* Add space between columns */
+    }
+}
