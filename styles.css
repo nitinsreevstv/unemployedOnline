@@ -1,0 +1,82 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #DEEEF1;
+}
+
+/* css for header started here */
+/* Fixed header styles */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #CDB9DF;
+    color: #fff;
+    padding: 10px 60px 10px 147px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fixed-header .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block; /* Ensures "Unemployed" and "Online" are in the same line */
+    
+
+}
+.fixed-header .logo .name {
+    color: #000; /* Black color for "Unemployed" */
+}
+.fixed-header .logo .surname {
+    color: #4CAF50; /* Green color for "Online" */
+    
+}
+.fixed-header .auth {
+    margin-right: 50px; /* Adjusted margin for the entire .auth block */
+    
+}
+.fixed-header .auth .btn {
+    padding: 8px 16px;
+    color: #000000;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.fixed-header .auth .contact-link {
+    padding: 8px 16px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 60px; /* Space between Log In/Register and Contact Us */
+}
+/* Content area styles */
+.content {
+    margin-top: 80px; /* adjust this to account for the fixed header height */
+    padding: 20px;
+    text-align: center;
+}
+.auth a {
+    display: inline-block;
+    padding: 10px 20px;
+    transition: transform 0.2s ease-in-out;
+}
+.auth a:hover {
+    transform: scale(1.1); /* Scale up by 10% on hover */
+}
+
+/* css for header ended here  */
