@@ -68,7 +68,7 @@ body {
 }
 
 .first {
-    background-color: #6ACFC7;
+    /* background-color: #6ACFC7; */
     height: 898px;
     width: 1920px;
     display: flex;
@@ -78,13 +78,13 @@ body {
 }
 
 .left {
-    background-color: #6ACFC7;
+    /* background-color: #6ACFC7; */
     width: 750px;
     height: 700px;
 }
 
 .right {
-    background-color: #6ACFC7;
+    /* background-color: #6ACFC7; */
     width: 750px;
     height: 700px;
     display: flex;
