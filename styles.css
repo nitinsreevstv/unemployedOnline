@@ -80,26 +80,41 @@ body {
 /* css for header ended here  */
 /* first section css started here */
 .firstSection {
-    display: flex;
-    width: 1356px;
-    height: 747px;
-    align-items: center;    
-    margin-bottom: 0px;
-    margin-left: 105px;
+    /* display: flex;
+    justify-content:space-around; 
+    align-items: center;
+    width: auto;      */
+    margin-left: 50px;
     margin-right: 51px;
-    margin-top: 149px;
+    margin-top: 129px; 
+    display: flex;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 .leftSection {
-    font-size: 75px;
+    font-size: 55px;
+    /* font-size: 75px;
     width: 684px;
     height: 747px;
-    padding-top: 29px;
+    padding-top: 29px; */
+    padding: 20px;
+    flex: 1;
+}
+.rightSection {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .rightSection img {
-    width: 672px; /* Set the width to 672px */
-    height: 747px; /* Set the height to 747px */
-    border: 2px solid white; /* Adjusted border styling */
-    border-radius: 15px;
+    /* width: 672px; 
+    height: 747px; */
+    max-width: 100%;
+    border: 2px solid white; 
+    border-radius: 50px; 
+    height: auto;
+    padding: 20px;
+    flex: 1;
 }
 .green {
     color: #4CAF50;
@@ -118,7 +133,7 @@ body {
     font-family: 'Anek Devanagari', sans-serif;
     color: grey;
     padding-top: 45px;
-    width: 584px;
+    /* width: 584px; */
 }
 .textBlock2 p {
     font-size: 32px;
@@ -127,7 +142,65 @@ body {
 .textBlock3 p {
     font-size: 24px;
     padding-top: 31px;
-    height: 216px;
-    width: 629px;
+    /* height: 216px;
+    width: 629px; */
 }
 /* first section css ended here */
+
+
+
+/* footer section */
+footer {
+    background-color: #0C1A1A;
+}
+
+.footer {
+    display: flex;
+    padding: 23px 122px;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer > div {
+    width: 223px;
+}
+.footer .footerFirst a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+footer .footer-rights {
+    text-align: center;
+    padding: 12px 0;
+    color: rgb(255, 255, 255);
+}
+.footer .footerFirst .name {
+    color: #ffffff; /* Black color for "Unemployed" */
+}
+.footer .footerFirst .surname {
+    color: #4CAF50; /* Green color for "Online" */
+    
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px; /* Reduce padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        align-items: center; /* Center align items in column */
+    }
+
+    .footer > div {
+        width: 100%; /* Make each column full width */
+        margin-bottom: 20px; /* Add space between columns */
+    }
+}
