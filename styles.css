@@ -81,9 +81,12 @@ body {
 /* first section css started here */
 .firstSection {
     display: flex;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     width: 1356px;
     height: 747px;
-    align-items: center;    
+       
     margin-bottom: 0px;
     margin-left: 105px;
     margin-right: 51px;
