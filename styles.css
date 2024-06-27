@@ -32,8 +32,6 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     display: inline-block; /* Ensures "Unemployed" and "Online" are in the same line */
-    
-
 }
 .fixed-header .logo .name {
     color: #000; /* Black color for "Unemployed" */
@@ -80,3 +78,56 @@ body {
 }
 
 /* css for header ended here  */
+/* first section css started here */
+.firstSection {
+    display: flex;
+    width: 1356px;
+    height: 747px;
+    align-items: center;    
+    margin-bottom: 0px;
+    margin-left: 105px;
+    margin-right: 51px;
+    margin-top: 149px;
+}
+.leftSection {
+    font-size: 75px;
+    width: 684px;
+    height: 747px;
+    padding-top: 29px;
+}
+.rightSection img {
+    width: 672px; /* Set the width to 672px */
+    height: 747px; /* Set the height to 747px */
+    border: 2px solid white; /* Adjusted border styling */
+    border-radius: 15px;
+}
+.green {
+    color: #4CAF50;
+}
+.textgrey {
+    color: grey;
+}
+.textBlock {
+    margin-top: 20px;
+}
+.textBlock p {
+    margin: 0;
+}
+.textBlock1 p {
+    font-size: 32px;
+    font-family: 'Anek Devanagari', sans-serif;
+    color: grey;
+    padding-top: 45px;
+    width: 584px;
+}
+.textBlock2 p {
+    font-size: 32px;
+    padding-top: 21px;
+}
+.textBlock3 p {
+    font-size: 24px;
+    padding-top: 31px;
+    height: 216px;
+    width: 629px;
+}
+/* first section css ended here */
