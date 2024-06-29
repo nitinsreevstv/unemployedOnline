@@ -125,6 +125,7 @@ body {
 }
 .textgrey {
     color: grey;
+    font-weight: 200;
 }
 .textBlock {
     margin-top: 20px;
@@ -314,6 +315,11 @@ footer .footer-rights {
     color: #6c63ff;
     text-decoration: none;
     font-size: 18px;
+}
+.why {
+    font-size: 75px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 550;
 }
 
 /* need to write media querry from 1100  screen size and so on  */
