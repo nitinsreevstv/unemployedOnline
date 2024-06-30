@@ -204,8 +204,9 @@ footer .footer-rights {
     font-size: 55px;
     padding: 20px;
     flex: 1;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding-top: 100px;
+    padding-top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 550;
 }
 .right {
     padding: 20px;
@@ -316,11 +317,11 @@ footer .footer-rights {
     text-decoration: none;
     font-size: 18px;
 }
-.why {
+/* .why {
     font-size: 75px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 550;
-}
+} */
 
 /* need to write media querry from 1100  screen size and so on  */
 
