@@ -84,10 +84,6 @@ body {
 /* css for header ended here  */
 /* first section css started here */
 .firstSection {
-    /* display: flex;
-    justify-content:space-around; 
-    align-items: center;
-    width: auto;      */
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 129px; 
@@ -97,10 +93,6 @@ body {
 }
 .leftSection {
     font-size: 55px;
-    /* font-size: 75px;
-    width: 684px;
-    height: 747px;
-    padding-top: 29px; */
     padding: 20px;
     flex: 1;
 }
@@ -111,8 +103,6 @@ body {
     flex-direction: column;
 }
 .rightSection img {
-    /* width: 672px; 
-    height: 747px; */
     max-width: 100%;
     border: 2px solid white; 
     border-radius: 50px; 
@@ -138,7 +128,6 @@ body {
     font-family: 'Anek Devanagari', sans-serif;
     color: grey;
     padding-top: 45px;
-    /* width: 584px; */
 }
 .textBlock2 p {
     font-size: 32px;
@@ -147,8 +136,6 @@ body {
 .textBlock3 p {
     font-size: 24px;
     padding-top: 31px;
-    /* height: 216px;
-    width: 629px; */
 }
 /* first section css ended here */
 
@@ -219,7 +206,8 @@ footer .footer-rights {
     color: rgb(71, 71, 71);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: lighter;
-    padding-top: 50px;
+    width: 700px;
+    padding-top: 20px;
 }
 
 .container {
@@ -227,7 +215,7 @@ footer .footer-rights {
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 450px;
+    width: 500px;
     height: 600px;
     text-align: center;
 }
@@ -320,27 +308,100 @@ footer .footer-rights {
     font-size: 75px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 550;
+    width: 500px;
+}
+.form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: white;
+        padding: 50px;
+        width: 500px;
 }
 
-/* need to write media querry from 1100  screen size and so on  */
+.form-group {
+    margin-bottom: 15px;
+}
 
-/* sign in css ended */
+.form-group label {
+    display: inline;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.form-group label {
+    margin: 0; /* Remove any default margin */
+}
+.checkboxText{
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.form-group label a {
+    color: #7b68ee;
+    text-decoration: none;
+}
+
+.form-group label a:hover {
+    text-decoration: underline;
+}
+
+.submit-button {
+    background-color:#0C1A1A;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #000;
+}
 
 /* Media Queries */
 
-@media (max-width: 768px) {
-    .footer {
-        padding: 15px; /* Reduce padding */
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        align-items: center; /* Center align items in column */
+/* Screens 1100px and below */
+@media (max-width: 1100px) {
+    .first {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .footer > div {
-        width: 100%; /* Make each column full width */
-        margin-bottom: 20px; /* Add space between columns */
+    .left, .right {
+        width: 100%;
     }
-}
+
+    .fixed-header {
+        padding: 10px 20px;
+    }
+
+    .fixed-header .auth .contact-link {
+        margin-right: 20px;
+    }
+
+    .firstSection {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .footer
