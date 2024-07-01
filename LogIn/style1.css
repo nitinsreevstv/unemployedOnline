@@ -38,8 +38,7 @@ body {
 .fixed-header .logo .name {
     color: #ffffff;
 }
-
-.fixed-header .logo .surname {
+.surname {
     color: #4CAF50;
 }
 
@@ -102,7 +101,7 @@ body {
     padding-top: 20px;
 }
 
-.container {
+.container001 {
     background-color: white;
     padding: 25px;
     border-radius: 10px;
@@ -112,7 +111,7 @@ body {
     text-align: center;
 }
 
-.container h1 {
+.container001 h1 {
     margin-bottom: 25px;
 }
 
@@ -268,4 +267,10 @@ body {
 
 .submit-button:hover {
     background-color: #000;
+}
+
+
+/* footer section */
+.footer_body{
+    background-color: #000001;
 }
