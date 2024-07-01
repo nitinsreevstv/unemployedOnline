@@ -39,7 +39,7 @@ body {
     color: #ffffff;
 }
 
-.fixed-header .logo .surname {
+.surname {
     color: #4CAF50;
 }
 
@@ -174,40 +174,9 @@ body {
     }
 }
 
+
 /* footer section */
-/* footer {
-    background-color: #0C1A1A;
+.footer_body{
+    background-color: #000001;
 }
 
-.footer {
-    display: flex;
-    padding: 23px 122px;
-    justify-content: space-evenly;
-    color: white;
-}
-
-.footer ul {
-    list-style: none;
-}
-
-.footer > div {
-    width: 223px;
-}
-.footer .footerFirst a {
-    text-decoration: none; 
-    color: inherit; /
-}
-
-footer .footer-rights {
-    text-align: center;
-    padding: 12px 0;
-    color: rgb(255, 255, 255);
-}
-.footer .footerFirst .name {
-    color: #ffffff; 
-}
-.footer .footerFirst .surname {
-    color: #4CAF50;
-    
-} */
- 
