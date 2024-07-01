@@ -218,6 +218,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
   }
 
  .subscribe-form label {
@@ -236,15 +237,19 @@ footer {
  .subscribe-form button {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    background-color: #fff;
+    border-radius: 10px;
+    background-color: #ADD8E6;
     color: #121212;
     cursor: pointer;
+    width: max-content;
   }
 
  .copyright {
     margin-top: 20px;
     font-size: 14px;
     
+  }
+  .name {
+    color: #fff;
   }
 
