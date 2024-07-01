@@ -176,7 +176,75 @@ body {
 
 
 /* footer section */
-.footer_body{
-    background-color: #000001;
-}
+footer {
+    background-color: #121212;
+    padding: 30px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+
+ .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+ .logo1 {
+    display: flex;
+    align-items: center;
+    
+  }
+
+ .logo1 img {
+    height: 100px;
+    
+  }
+  .logo1 a {
+    text-decoration: none;
+  }
+ .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+ .nav-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+ .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+ .subscribe-form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+ .subscribe-form input[type="email"] {
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #121212;
+  }
+
+ .subscribe-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #121212;
+    cursor: pointer;
+  }
+
+ .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    
+  }
 
