@@ -355,8 +355,10 @@ footer {
     margin-top: 129px;
   }
   h1 {
-    font-size: 36px;
+    font-size: 60px;
     margin-bottom: 30px;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   .team-member {
     display: inline-block;
