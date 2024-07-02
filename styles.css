@@ -14,7 +14,6 @@ body {
 }
 
 /* Fixed header styles */
-/* Fixed header styles */
 .fixed-header {
   position: fixed;
   top: 0;
@@ -105,87 +104,87 @@ body {
 
 @media screen and (max-width: 868px) {
 /* Hide auth content */
-.auth {
-  display: none;
-}
+  .auth {
+    display: none;
+  }
 
-/* Add auth content to nav bar */
-.fixed-header {
-  justify-content: flex-start;
-  padding-left: 30px; /* Adjust padding for logo alignment */
-}
+  /* Add auth content to nav bar */
+  .fixed-header {
+    justify-content: flex-start;
+    padding-left: 30px; /* Adjust padding for logo alignment */
+  }
 
 
-.menu-icon {
-  display: block;
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  z-index: 1000;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+  .menu-icon {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
 
-.menu-icon span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px auto;
-  transition: background-color 0.3s ease;
-}
+  .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    transition: background-color 0.3s ease;
+  }
 
-.menu-toggle {
-  display: none; /* Hide the checkbox */
-}
+  .menu-toggle {
+    display: none; /* Hide the checkbox */
+  }
 
-.menu-toggle:checked ~ .menu-icon span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
+  .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
 
-.menu-toggle:checked ~ .menu-icon span:nth-child(2) {
-  opacity: 0; /* Hide the middle line when checked */
-}
+  .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0; /* Hide the middle line when checked */
+  }
 
-.menu-toggle:checked ~ .menu-icon span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
+  .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
 
-.menu-toggle:checked ~ .fixed-header .auth {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  background-color: #000001;
-  position: absolute;
-  top: 47px;
-  left: 0;
-  width: 100%;
-}
+  .menu-toggle:checked ~ .fixed-header .auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #000001;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+  }
 
-.menu-toggle:checked ~ .fixed-header .auth a {
-  display: block;
-  padding: 10px;
-  border-bottom: 1px solid #333;
-}
+  .menu-toggle:checked ~ .fixed-header .auth a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
 
-.menu-toggle:checked ~ .fixed-header .auth a:last-child {
-  border-bottom: none;
-}
-.fixed-header .auth{
-      margin-right: 0px;
+  .menu-toggle:checked ~ .fixed-header .auth a:last-child {
+    border-bottom: none;
+  }
+  .fixed-header .auth{
+        margin-right: 0px;
 
-   }
-   .fixed-header .auth .contact-link{
-      margin-right: 0px;
-   }
-.logo {
-  text-align: left;
-}
+    }
+    .fixed-header .auth .contact-link{
+        margin-right: 0px;
+    }
+  .logo {
+    text-align: left;
+  }
 
-.logo a {
-  display: inline-block;
-}
+  .logo a {
+    display: inline-block;
+  }
 }
 /* css for header ended here  */
 
