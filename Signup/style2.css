@@ -14,56 +14,178 @@ body {
 
 /* Fixed header styles */
 .fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000001; 
-    color: #fff;
-    padding: 10px 60px 10px 147px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000001; 
+  color: #fff;
+  padding: 10px 60px 10px 147px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .fixed-header .logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
 }
 
 .fixed-header .logo .name {
-    color: #ffffff;
+  color: #ffffff;
 }
+
 .surname {
-    color: #4CAF50;
+  color: #4CAF50;
 }
 
 .fixed-header .auth {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .fixed-header .auth .btn {
-    padding: 8px 16px;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .fixed-header .auth .contact-link {
-    padding: 8px 16px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 60px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 60px;
 }
+.content {
+  margin-top: 80px; /* adjust this to account for the fixed header height */
+  padding: 20px;
+  text-align: center;
+}
+.auth a {
+  display: inline-block;
+  padding: 10px 20px;
+  transition: transform 0.2s ease-in-out;
+}
+.auth a:hover {
+  transform: scale(1.1); /* Scale up by 10% on hover */
+}
+
+/* css for header ended here  */
+@media screen and (max-width: 1100px) and (min-width: 868px) {
+  .fixed-header {
+  padding-left: 40px; /* Adjust padding for logo alignment */
+  }
+    .logo {
+    text-align: left;
+    }
+
+    .logo a {
+      display: inline-block;
+    }
+    .fixed-header .auth{
+        margin-right: 0px;
+
+    }
+    .fixed-header .auth .contact-link{
+        margin-right: 0px;
+    }
+  }
+
+
+@media screen and (max-width: 868px) {
+  /* Hide auth content */
+  .auth {
+    display: none;
+  }
+
+  /* Add auth content to nav bar */
+  .fixed-header {
+    justify-content: flex-start;
+    padding-left: 30px; /* Adjust padding for logo alignment */
+  }
+
+
+  .menu-icon {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-toggle {
+    display: none; /* Hide the checkbox */
+  }
+
+  .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0; /* Hide the middle line when checked */
+  }
+
+  .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .menu-toggle:checked ~ .fixed-header .auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #000001;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+  }
+
+  .menu-toggle:checked ~ .fixed-header .auth a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
+
+  .menu-toggle:checked ~ .fixed-header .auth a:last-child {
+    border-bottom: none;
+  }
+  .fixed-header .auth{
+        margin-right: 0px;
+
+    }
+    .fixed-header .auth .contact-link{
+        margin-right: 0px;
+    }
+  .logo {
+    text-align: left;
+  }
+
+  .logo a {
+    display: inline-block;
+  }
+}
+
 /* header css ended */
 /* select your employment css started here */
 .container4 {
