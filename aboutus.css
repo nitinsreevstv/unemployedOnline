@@ -455,4 +455,36 @@ footer {
   .name {
     color: #fff;
   }
+  @media screen and (max-width: 1100px) and (min-width: 868px) {
+    .container {
+      margin-left: 3%;
+      margin-right: 3%
+    }
+  }
+  @media screen and (max-width: 868px){
+    .container {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-links {
+        flex-wrap: nowrap;
+        gap: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .subscribe-form {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .subscribe-form input[type="email"] {
+        width: auto;
+        max-width: none;
+    }
+    .subscribe-form button {
+        width: auto;
+        max-width: none;
+    }
+}
   /* footer ended here */
