@@ -189,12 +189,15 @@ body {
   }
   /* css for header ended here  */
 /* about us css started here */
+.topContent{
+  margin-top: 120px;
+}
 .aboutOne {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    margin: 120px 180px 50px;
+    margin-bottom: 50px;
   }
   .aboutOne .box {
     padding: 20px;
@@ -226,6 +229,7 @@ body {
     align-items: center;
     padding: 20px;
     margin-bottom: 50px;
+    
   }
   .aboutTwo .box {
       padding: 20px;
@@ -258,6 +262,37 @@ body {
     margin-bottom: 30px;
     margin-right: 5%;
     margin-left: 5%;
+  }
+  .box4 .box5{
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 30px;
+  }
+  .box4{
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+  }
+  .box4 .btn {
+    padding: 8px 16px;
+    background-color: #040000;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  .box4 a {
+    display: inline-block;
+    padding: 10px 20px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .box4 a:hover {
+    transform: scale(1.1); /* Scale up by 10% on hover */
   }
   @media screen and (max-width: 1100px) and (min-width: 668px) {
     .aboutOne {
