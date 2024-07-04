@@ -25,6 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 
 .fixed-header .logo a {
@@ -250,6 +251,50 @@ body {
     font-weight: 550;
     width: 500px;
 }
+/* media query for this  */
+@media screen and (max-width: 1100px) and (min-width: 868px){
+  .firstSection{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 120px; 
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 868px) {
+      .firstSection {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 50px;
+      }
+
+      .leftSection, .rightSection {
+        flex: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .why {
+        font-size: 6vw;
+        width: 100%;
+      }
+
+      .textBlock p {
+        font-size: 16px;
+      }
+
+      .rightSection img {
+        border-radius: 30px;
+      }
+      .textBlock2{
+        display: none;
+      }
+      .textBlock{
+        margin: 0px;
+        height: fit-content;
+      }
+    }
 /* first section css ended here */
 
 
@@ -334,7 +379,7 @@ body {
   .name {
     color: #fff;
   }
-  @media screen and (max-width: 1100px) and (min-width: 868px) {
+  @media screen and (max-width: 1200px) and (min-width: 868px) {
     .container {
       margin-left: 3%;
       margin-right: 3%
@@ -345,6 +390,8 @@ body {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        margin-left: 1%;
+        margin-right: 1%;
     }
     .nav-links {
         flex-wrap: nowrap;
