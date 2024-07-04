@@ -253,34 +253,6 @@ body {
 /* first section css ended here */
 
 
-/* Media Queries */
-
-/* Screens 1100px and below */
-@media (max-width: 1100px) {
-    .first {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left, .right {
-        width: 100%;
-    }
-
-    .fixed-header {
-        padding: 10px 20px;
-    }
-
-    .fixed-header .auth .contact-link {
-        margin-right: 20px;
-    }
-
-    .firstSection {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
-
-
   /* footer section */
   footer {
     background-color: #121212;
