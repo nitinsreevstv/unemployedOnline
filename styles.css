@@ -1,4 +1,8 @@
+/* .rightSection img  changes in this*/
+
+
 /* Reset default styles */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -211,10 +215,10 @@ body {
 }
 .rightSection img {
     max-width: 100%;
-    border: 2px solid #B0C4DE; 
-    border-radius: 50px; 
+    /* border: 2px solid #B0C4DE;  //Changes
+    border-radius: 50px;  */
     height: auto;
-    padding: 20px;
+    /* padding: 20px; */
     flex: 1;
 }
 .green {
