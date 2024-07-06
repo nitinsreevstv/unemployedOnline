@@ -148,8 +148,11 @@
           </div>
           <div class="subscribe-form">
             <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
-            <input type="email" placeholder="Enter your email">
-            <button type="submit">Submit</button>
+            <div class="input-container">
+              <input type="email" id="footer-email" placeholder="Enter your email">
+              <span class="error-icon" id="email-error-icon">!</span>
+          </div>
+          <button type="submit" id="footer-submit" disabled>Submit</button>
           </div>
         </div>
         <div class="copyright">

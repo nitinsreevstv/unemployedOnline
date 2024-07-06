@@ -455,6 +455,17 @@ footer {
   .name {
     color: #fff;
   }
+  .input-container {
+    position: relative;
+  }
+  .error-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: red; /* Color of the error icon */
+      display: none; /* Initially hidden */
+  }
   @media screen and (max-width: 1100px) and (min-width: 868px) {
     .container {
       margin-left: 3%;
