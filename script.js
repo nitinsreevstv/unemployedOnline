@@ -36,3 +36,10 @@ function handleInputChange() {
 // Add event listener to input field for input changes
 emailInput.addEventListener('input', handleInputChange);
 // footer subscribe js ended 
+// Typed.js code (if you're using it)
+
+var typed = new Typed('#element', {
+    strings: ['Why do programmers prefer dark mode? Because the light attracts bugs! 🐞', 'Why was the computer cold? It left its Windows open! 🖥️❄️', 'Why did the JavaScript developer wear glasses? Because he could not C#! 👓'],
+    typeSpeed: 50,
+    loop: true,
+  });
