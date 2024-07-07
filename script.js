@@ -38,13 +38,31 @@ emailInput.addEventListener('input', handleInputChange);
 // footer subscribe js ended 
 // Typed.js code (if you're using it)
 
-var typed = new Typed('#element', {
-    strings: [
-      'Why do programmers prefer dark mode?\nBecause the light attracts bugs! 🐞',
-      'Why was the computer cold?\nIt left its Windows open! 🖥️❄️',
-      'Why did the JavaScript developer wear glasses?\nBecause he could not C#! 👓',
-      'Why did the database administrator leave his wife?\nBecause he had "strict" constraints at home! 😄'
-    ],
+var jokes = [
+    'Why do programmers prefer dark mode?<br>Because the light attracts bugs! 🐞',
+    'Why was the computer cold?<br>It left its Windows open! 🖥️❄️',
+    'Why did the JavaScript developer wear glasses?<br>Because he could not C#! 👓',
+    'Why did the database administrator leave his wife?<br>Because he had "strict" constraints at home! 😄',
+    'Why did the philosopher become a barista?<br>Because he wanted to espresso his thoughts! ☕🧠'
+  ];
+
+  // Shuffle function to randomly shuffle the jokes array
+  function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Shuffle the jokes array initially
+  jokes = shuffle(jokes);
+
+  // Initialize Typed.js with shuffled jokes
+  var typed = new Typed('#element', {
+    strings: jokes,
     typeSpeed: 100,
     loop: true,
+    smartBackspace: true, // Optional: Enables smart backspacing to handle HTML tags
+    showCursor: true // Optional: Show cursor animation
   });
