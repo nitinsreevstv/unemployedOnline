@@ -141,7 +141,6 @@ body {
   .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
-
   .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
     opacity: 0; /* Hide the middle line when checked */
   }
@@ -444,6 +443,8 @@ body {
   align-items: center;
   padding: 20px;
   margin-right: 30px;
+  min-height: 350px;
+  width: 50%;
 }
 .aboutOne .box1{
   padding: 20px;
@@ -477,6 +478,9 @@ hr{
     margin-top: 120px; 
     margin-bottom: 20px;
   }
+  .aboutOne{
+    min-width: 40%;
+  }
     
   .aboutOne .box2 {
     margin-top: 20px;
@@ -497,6 +501,10 @@ hr{
   }
   .aboutOne .box2 .box3{
     font-size: 7vw;
+  }
+  .aboutOne{
+    min-width: 80%;
+    min-height: 400px;
   }
   .right{
     flex: 100%;
