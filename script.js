@@ -39,7 +39,12 @@ emailInput.addEventListener('input', handleInputChange);
 // Typed.js code (if you're using it)
 
 var typed = new Typed('#element', {
-    strings: ['Why do programmers prefer dark mode? Because the light attracts bugs! 🐞', 'Why was the computer cold? It left its Windows open! 🖥️❄️', 'Why did the JavaScript developer wear glasses? Because he could not C#! 👓'],
-    typeSpeed: 50,
+    strings: [
+      'Why do programmers prefer dark mode?\nBecause the light attracts bugs! 🐞',
+      'Why was the computer cold?\nIt left its Windows open! 🖥️❄️',
+      'Why did the JavaScript developer wear glasses?\nBecause he could not C#! 👓',
+      'Why did the database administrator leave his wife?\nBecause he had "strict" constraints at home! 😄'
+    ],
+    typeSpeed: 100,
     loop: true,
   });
