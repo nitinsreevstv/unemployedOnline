@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnemployedOnline</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- for hearder  -->
+    <input type="checkbox" class="menu-toggle" id="menu-toggle"> <!-- Moved checkbox here -->
+    <header class="fixed-header">
+        <div class="logo">
+            <a href="" onclick="return false;">
+                <span class="name">Unemployed</span><span class="surname">Online</span>
+            </a>
+        </div>
+        <div class="auth">
+            <a href="./LogIn/Register.html" class="btn">LogIn/Register</a>
+            <a href="./LogIn/contact-us.html" class="contact-link">Contact Us</a>
+        </div>
+    </header>
+    <label for="menu-toggle" class="menu-icon"> <!-- Added for attribute -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <!-- header coded ended -->
+    <section class="firstSection">
+        <div class="leftSection">
+            <div class="why">
+                Looking for a change ?
+            </div>
+            <p class="detailsWhy">
+                Join UnemployedOnline and let employers find you for their next project. Save your details with us, and we'll match you with opportunities that fit your skills and experience.
+            </p>
+        </div>
+        <div class="rightSection">
+            <img src="../img/employee.png" alt="first_img">
+      </div>
+    </section>  
+<!-- first section ended here  -->
+<!-- from section started here -->
+ <hr>
+ <div class="save-section">
+    <div class="save-your-text">
+        Save Your Details
+    </div>
+    <p class="detailsWhy">
+        Fill out the form below to register with UnemployedOnline. By saving your details, you make it easier for recruiters and startups to find you for their project needs.
+    </p>
+</div>
+    
+    <!-- footer section started here -->
+    <footer>
+      <div class="container">
+        <div class="logo1">
+          <img src="../img/logoWhite.png" alt="Unemployed Online Logo">
+          <a href="#topSection">
+            <span class="name">Unemployed</span><span class="surname">Online</span>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="#topSection">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="./LogIn/contact-us.html">Contact Us</a>
+          <a href="ourTeam.html">Our Team</a>
+        </div>
+        <div class="subscribe-form">
+          <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
+          <div class="input-container">
+            <input type="email" id="footer-email" placeholder="Enter your email">
+            <span class="error-icon" id="email-error-icon">!</span>
+        </div>
+        <button type="submit" id="footer-submit" disabled>Submit</button>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2024 UnemployedOnline. All rights reserved.
+      </div>
+    </footer>
+  <script src="script.js"></script>
+</body>
+</html>
