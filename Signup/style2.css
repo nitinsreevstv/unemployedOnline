@@ -525,3 +525,8 @@ hr{
     margin: 0px;
     }
 }
+
+
+.invalid-input {
+  border: 1px solid red; /* Example: Red border for invalid input */
+}
