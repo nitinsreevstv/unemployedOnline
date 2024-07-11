@@ -261,10 +261,6 @@ body {
     color: #121212;
     cursor: pointer;
     width: max-content;
-    transition: transform 0.2s ease-in-out;
-  }
-  .subscribe-form button:hover {
-    transform: scale(1.1);
   }
   .copyright {
     margin-top: 20px;
@@ -432,6 +428,54 @@ hr{
     margin-bottom: 40px;
     padding: 20px;
 }
+h2{
+  width: 90%;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 550;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+.personal-info {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  margin-top: 0px;
+}
+form{
+  width: 400px;
+  align-items: center;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-label {
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  margin-right: 10px;
+}
+.form-input {
+  max-width: 200px;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.input-field{
+  height: 30px;
+}
+.verify {
+    padding: 5px 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ADD8E6;
+    color: #121212;
+    cursor: pointer;
+    width: max-content;
+    margin-left: 10px;
+}
 @media screen and (max-width: 1200px) and (min-width: 868px){
   .save-section .save-your-text {
     font-size: 4vw;
@@ -441,7 +485,11 @@ hr{
     font-size: 16px;
     margin-bottom: 30px;
   }
-  
+  h2{
+    font-size: 3vw;
+    margin: 0px;
+  }
+
 }
 @media (max-width: 868px) {
   .save-section .save-your-text {
@@ -452,6 +500,11 @@ hr{
     font-size: 3vw;
     margin-bottom: 30px;
   }
-  
-
+  h2{
+    font-size: 4vw;
+    margin: 0;
+  }
+  .form-label{
+    width: 80px;
+  }
 }
