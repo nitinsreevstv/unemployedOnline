@@ -624,7 +624,9 @@ body {
         transform: scale(1.1); /* Scale up by 10% on hover */
     }
   /* our team css ended */
-
+  .invalid-input {
+    border: 1px solid red; /* Example: Red border for invalid input */
+  }
 
 
 

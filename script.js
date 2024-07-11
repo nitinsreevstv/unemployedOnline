@@ -32,7 +32,57 @@ function handleInputChange() {
         errorIcon.style.display = 'inline-block'; // Display error icon
     }
 }
-
-// Add event listener to input field for input changes
 emailInput.addEventListener('input', handleInputChange);
 // footer subscribe js ended 
+
+
+
+// login js
+document.addEventListener('DOMContentLoaded', function() {
+    const emailField = document.querySelector('input[type="email"][placeholder="Enter email address"]');
+    const passwordField = document.querySelector('input[type="password"][placeholder="Password"]');
+    const loginBtn = document.querySelector('.login-btn');
+    loginBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        let isValid = true;
+        if (!isValidEmail(emailField.value.trim())) {
+            markAsInvalid(emailField);
+            isValid = false;
+        } else {
+            markAsValid(emailField);
+        }
+        if (!isValidPassword(passwordField.value)) {
+            markAsInvalid(passwordField);
+            isValid = false;
+        } else {
+            markAsValid(passwordField);
+        }
+        if (isValid) {
+            window.location.href = '../index.html';
+        }
+    });
+    function markAsInvalid(field, errorMessage) {
+        field.classList.add('invalid-input');
+        const errorElement = document.createElement('div');
+        errorElement.classList.add('error-message');
+        errorElement.innerText = errorMessage;
+        const existingError = field.parentElement.querySelector('.error-message');
+        if (!existingError) {
+            field.parentElement.appendChild(errorElement);
+        }
+    }
+    function markAsValid(field) {
+        field.classList.remove('invalid-input');
+        const errorElement = field.parentElement.querySelector('.error-message');
+        if (errorElement) {
+            errorElement.remove();
+        }
+    }
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    function isValidPassword(password) {
+        return password.trim().length >= 8;
+    }
+});
