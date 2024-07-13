@@ -530,3 +530,15 @@ hr{
 .invalid-input {
   border: 1px solid red; 
 }
+.error-popup {
+  position: absolute;
+  background-color: #ffffff;
+  border: 0.5px solid red;
+  color: red;
+  font-size: 10px;
+  margin-left: 10px;
+  padding: -5px;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+

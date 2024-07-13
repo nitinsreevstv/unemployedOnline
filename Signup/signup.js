@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Validate Full Name
         if (fullNameField.value.trim() === '') {
+            showErrorMessage(fullNameField, 'Please enter your full name.');
             markAsInvalid(fullNameField);
             isValid = false;
         } else {
@@ -92,22 +93,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Validate Email
         if (!isValidEmail(emailField.value.trim())) {
+            showErrorMessage(emailField, 'Please enter a valid email address.');
             markAsInvalid(emailField);
             isValid = false;
         } else {
             markAsValid(emailField);
         }
 
-        // Validate Phone Number (assuming a basic format check)
+        // Validate Phone Number
         if (!isValidPhoneNumber(phoneField.value.trim())) {
+            showErrorMessage(phoneField, 'Phone number should be 10 digits.');
             markAsInvalid(phoneField);
             isValid = false;
         } else {
             markAsValid(phoneField);
         }
 
-        // Validate Password (at least 8 characters)
+        // Validate Password
         if (passwordField.value.trim().length < 8) {
+            showErrorMessage(passwordField, 'Password should be at least 8 characters long.');
             markAsInvalid(passwordField);
             isValid = false;
         } else {
@@ -121,28 +125,54 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Function to mark field as invalid (add a visual indicator)
+    // Function to show error message below the input field
+    function showErrorMessage(field, message) {
+        // Check if there's already an error message element
+        let errorPopup = field.nextElementSibling;
+
+        if (!errorPopup || !errorPopup.classList.contains('error-popup')) {
+            // Create a new error message element if it doesn't exist
+            errorPopup = document.createElement('div');
+            errorPopup.className = 'error-popup';
+            errorPopup.style.color = 'red';
+            field.parentNode.insertBefore(errorPopup, field.nextSibling);
+        }
+
+        errorPopup.textContent = message;
+        errorPopup.style.display = 'block';
+
+        // Position the error message below the input field
+        const fieldRect = field.getBoundingClientRect();
+        errorPopup.style.left = fieldRect.left + 'px';
+        errorPopup.style.top = (fieldRect.top + fieldRect.height + 5) + 'px'; // Adjust 5px for spacing
+
+        // Automatically remove the popup after 5 seconds
+        setTimeout(function() {
+            errorPopup.style.display = 'none';
+        }, 5000);
+    }
+
+    // Function to mark field as invalid
     function markAsInvalid(field) {
         field.classList.add('invalid-input');
     }
 
-    // Function to mark field as valid (remove any visual indicator)
+    // Function to mark field as valid
     function markAsValid(field) {
         field.classList.remove('invalid-input');
     }
 
     // Function to validate email format using a regular expression
     function isValidEmail(email) {
-        // Regular expression for basic email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    // Function to validate phone number format (assuming a basic format)
+    // Function to validate phone number format
     function isValidPhoneNumber(phone) {
-        // Regular expression for basic phone number validation (10 digits)
         const phoneRegex = /^\d{10}$/;
         return phoneRegex.test(phone);
     }
 });
+
 // first page validation ended here
