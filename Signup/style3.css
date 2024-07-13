@@ -339,7 +339,7 @@ body {
     align-items: center;
 }
 .rightSection img {
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
     flex: 1;
 }
@@ -476,35 +476,58 @@ form{
     width: max-content;
     margin-left: 10px;
 }
-@media screen and (max-width: 1200px) and (min-width: 868px){
+@media screen and (max-width: 1200px) and (min-width: 868px) {
   .save-section .save-your-text {
     font-size: 4vw;
     margin: 0;
   }
-  .save-section p{
+  .save-section p {
     font-size: 16px;
     margin-bottom: 30px;
   }
-  h2{
+  h2 {
     font-size: 3vw;
-    margin: 0px;
+    margin: 0;
   }
-
+  .detailsWhy {
+    font-size: 24px; /* Adjusted for responsiveness */
+    padding: 10px; /* Adjusted padding for responsiveness */
+    margin-top: 50px; /* Adjusted margin for responsiveness */
+    margin-right: 50px; /* Adjusted margin for responsiveness */
+  }
 }
+
 @media (max-width: 868px) {
   .save-section .save-your-text {
     font-size: 4vw;
     margin: 0;
   }
-  .save-section p{
+  .save-section p {
     font-size: 3vw;
     margin-bottom: 30px;
   }
-  h2{
+  h2 {
     font-size: 4vw;
     margin: 0;
   }
-  .form-label{
-    width: 80px;
+  .detailsWhy {
+    font-size: 20px; /* Adjusted for smaller screens */
+    padding: 5px; /* Adjusted padding for smaller screens */
+    margin-top: 20px; /* Adjusted margin for smaller screens */
+    margin-right: 20px; /* Adjusted margin for smaller screens */
   }
 }
+
+.detailsWhy {
+  font-size: 30px; /* Default font size for larger screens */
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px; /* Default padding for larger screens */
+  font-weight: 100;
+  margin-top: 100px; /* Default margin for larger screens */
+  margin-right: 100px; /* Default margin for larger screens */
+}
+
+.green {
+  color: #4CAF50;
+}
+
