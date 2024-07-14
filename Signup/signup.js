@@ -176,3 +176,44 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // first page validation ended here
+
+
+// saving input data from first sign up page
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle form submission on page.html
+    if (document.getElementById('infoForm')) {
+      document.getElementById('infoForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting
+        saveUserDataAndRedirect();
+      });
+    }
+  
+    // Function to handle click on "Create new account" button
+    let createAccountBtn = document.querySelector('.newacc-btn');
+    if (createAccountBtn) {
+      createAccountBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default button behavior
+        saveUserDataAndRedirect();
+      });
+    }
+  
+    // Function to save user data to local storage and redirect to choose.html
+    function saveUserDataAndRedirect() {
+      // Get user input
+      let name = document.getElementById('nameSave').value;
+      let email = document.getElementById('emailSave').value;
+      let phone = document.getElementById('phoneSave').value;
+  
+      // Save data to local storage
+      let userData = {
+        name: name,
+        email: email,
+        phone: phone
+      };
+      localStorage.setItem('userData', JSON.stringify(userData));
+  
+      // Redirect to choose.html after saving data
+      window.location.href = 'chooseProfile.html';
+    }
+  });
+  

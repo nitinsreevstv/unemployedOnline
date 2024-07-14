@@ -30,10 +30,10 @@
     <section class="firstSection">
         <div class="leftSection">
             <div class="why">
-              Kickstart Your Career with <strong>Unemployed<span class="green">Online</span></strong>!
+              Kickstart Your Career with <strong>Unemployed<span class="surname">Online</span></strong>!
             </div>
             <p class="detailsWhy">
-              Are you a recent graduate or new to the job market? <br> <strong>Unemployed<span class="green">Online</span></strong> is here to help you find your first professional opportunities and gain valuable experience. <br>Join us today and let employers discover your potential.
+              Are you a recent graduate or new to the job market? <br> <strong>Unemployed<span class="surname">Online</span></strong> is here to help you find your first professional opportunities and gain valuable experience. <br>Join us today and let employers discover your potential.
             </p>
         </div>
         <div class="rightSection fre">
@@ -50,6 +50,11 @@
     <p class="detailsWhy">
       Fill out the form below to become part of our talent pool. We'll match you with opportunities that fit your skills and experience.
     </p>
+</div>
+<h2>Personal Information</h2>
+
+<div class="personal-info">
+  <div id="userDataDisplaySecond"></div>
 </div>
     
     <!-- footer section started here -->
@@ -81,5 +86,21 @@
       </div>
     </footer>
   <script src="signup.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let userData = JSON.parse(localStorage.getItem('userData'));
+      if (userData) {
+        // Display user data on thirdLink.html
+        if (document.getElementById('userDataDisplayThird')) {
+          document.getElementById('userDataDisplayThird').innerHTML = `
+            <h2>Data Display - Third Link</h2>
+            <p>Name: ${userData.name}</p>
+            <p>Email: ${userData.email}</p>
+            <p>Phone: ${userData.phone}</p>
+          `;
+        }
+      }
+    });
+  </script>
 </body>
 </html>

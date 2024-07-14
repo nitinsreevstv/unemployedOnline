@@ -33,7 +33,7 @@
               Your Next Opportunity Awaits!
             </div>
             <p class="detailsWhy">
-              Are you looking for new projects and opportunities to showcase your skills?<br> Join <strong>Unemployed<span class="green">Online</span></strong> today, where we connect talented professionals like you with recruiters and startup founders searching for project-based talent.
+              Are you looking for new projects and opportunities to showcase your skills?<br> Join <strong>Unemployed<span class="surname">Online</span></strong> today, where we connect talented professionals like you with recruiters and startup founders searching for project-based talent.
             </p>
         </div>
         <div class="rightSection">
@@ -50,6 +50,10 @@
     <p class="detailsWhy">
       Fill out the form below to become part of our talent pool. We'll match you with opportunities that fit your skills and experience.
     </p>
+</div>
+<h2>Personal Information</h2>
+<div class="personal-info">
+  <div id="userDataDisplayThird"></div>
 </div>
     
     <!-- footer section started here -->
@@ -81,5 +85,21 @@
       </div>
     </footer>
   <script src="signup.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) { 
+      // Display user data on secondLink.html
+      if (document.getElementById('userDataDisplaySecond')) {
+        document.getElementById('userDataDisplaySecond').innerHTML = `
+          <h2>Data Display - Second Link</h2>
+          <p>Name: ${userData.name}</p>
+          <p>Email: ${userData.email}</p>
+          <p>Phone: ${userData.phone}</p>
+        `;
+      }
+    }
+  });
+  </script>
 </body>
 </html>

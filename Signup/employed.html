@@ -33,7 +33,7 @@
                 Looking for a change?
             </div>
             <p class="detailsWhy">
-                Join <strong>Unemployed<span class="green">Online</span></strong> and let employers find you for their next project. <br> Save your details with us, and we'll match you with opportunities that fit your skills and experience.
+                Join <strong>Unemployed<span class="surname">Online</span></strong> and let employers find you for their next project. <br> Save your details with us, and we'll match you with opportunities that fit your skills and experience.
             </p>
         </div>
         <div class="rightSection">
@@ -48,30 +48,15 @@
         Save Your Details
     </div>
     <p class="detailsWhy">
-        Fill out the form below to register with UnemployedOnline. By saving your details, you make it easier for recruiters and startups to find you for their project needs.
+        Fill out the form below to register with <strong>Unemployed<span class="surname">Online</span></strong>. By saving your details, you make it easier for recruiters and startups to find you for their project needs.
     </p>
 </div>
 
 <h2>Personal Information</h2>
 
-    <div class="personal-info">
-        <form>
-            <div class="form-group">
-                <label class="form-label" for="first-name">First Name</label>
-                <input type="text" class="input-field" placeholder="Your full name">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="email">Email address</label>
-                <input type="email" class="input-field" placeholder="Your email address">
-                <button class="verify" for="email">Verify</button>
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="phone">Phone Number</label>
-                <input type="text" class="input-field" placeholder="Your phone number">
-                <button class="verify" for="phone">Verify</button>
-            </div>
-        </form>
-    </div>
+<div class="personal-info">
+  <div id="userDataDisplayFirst"></div>
+</div>
     
     <!-- footer section started here -->
     <footer>
@@ -102,5 +87,21 @@
       </div>
     </footer>
   <script src="signup.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+      // Display user data on firstLink.html
+      if (document.getElementById('userDataDisplayFirst')) {
+        document.getElementById('userDataDisplayFirst').innerHTML = `
+         
+          <p>Name: ${userData.name}</p>
+          <p>Email: ${userData.email}</p>
+          <p>Phone: ${userData.phone}</p>
+        `;
+      }
+    }
+  });
+</script>
 </body>
 </html>
