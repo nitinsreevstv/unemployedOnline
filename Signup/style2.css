@@ -391,7 +391,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 500px;
-  height: 600px;
+  height: 630px;
   text-align: center;
 }
 .container001 h1 {
@@ -531,7 +531,7 @@ hr{
   border: 1px solid red; 
 }
 .error-popup {
-  position: absolute;
+  position: inherit;
   background-color: #ffffff;
   border: 0.5px solid red;
   color: red;
