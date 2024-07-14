@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('userData', JSON.stringify(userData));
   
       // Redirect to choose.html after saving data
-      window.location.href = 'chooseProfile.html';
+    //   window.location.href = 'chooseProfile.html';
     }
   });
   
