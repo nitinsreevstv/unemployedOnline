@@ -1,5 +1,7 @@
 # Ignore node_modules directory
-node_modules/ 
+backend/node_modules/
+README.md
+
 
 # Ignore temporary and log files
 *.log
