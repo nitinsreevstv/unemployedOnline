@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "bundle": "^2.1.0",
-    "dotenv": "^16.4.5",
-    "update": "^0.7.4"
-  }
-}
