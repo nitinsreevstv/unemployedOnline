@@ -1,188 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnemployedOnline</title>
-    <link rel="stylesheet" href="aboutus.css">
-    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- for hearder  -->
-    <input type="checkbox" class="menu-toggle" id="menu-toggle"> <!-- Moved checkbox here -->
-    <header class="fixed-header">
-        <div class="logo">
-            <a href="./index.html">
-                <span class="name">Unemployed</span><span class="surname">Online</span>
-            </a>
-        </div>
-        <div class="auth">
-            <a href="./LogIn/Register.html" class="btn">LogIn/Register</a>
-            <a href="./LogIn/contact-us.html" class="contact-link">Contact Us</a>
-        </div>
-    </header>
-    <label for="menu-toggle" class="menu-icon"> <!-- Added for attribute -->
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <!-- header coded ended -->
-    <!-- about us content started here -->
-    <div class="aboutOne topContent">
-      <div class="box">
-        <b>We build bridge</b> between companies and skilled professionals.
-      </div>
-      <div class="box1">
-        <div class="box2">
-          <div class="box3">
-            At Unemployed<span class="surname">Online</span>, 
-            we specialize in connecting talented, unemployed 
-            individuals with recruiters and startup founders looking 
-            for short-term project teams. We build bridges between companies and 
-            skilled professionals, ensuring that each party finds the perfect match 
-            for their needs. Our extensive database includes both technical and non-technical 
-            professionals ready to contribute to your project requirements.
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="aboutTwo">
-      <div class="box1">
-        <div class="box2">
-          <div class="box3">
-            <b>Technical Talent:</b> From software developers to IT support, we have the technical experts to meet your project requirements.<br>
-            <b>Non-Technical Talent:</b> Whether you need administrative support, marketing professionals, or any other non-technical roles, we've got you covered.<br>
-            <b>Flexible Hiring:</b> Our platform allows you to hire professionals for the duration of your project, ensuring flexibility and cost-efficiency.<br>
-            <b>Fast and Professional:</b> We pride ourselves on our ability to match the right talent to your project quickly and professionally, reducing your hiring time and costs.<br>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <b>Our services</b>.
-      </div>
-    </div>
-    <hr>
-    <div class="aboutOne">
-      <div class="box">
-        <b>Why choose us?</b>
-      </div>
-      <div class="box1">
-        <div class="box2">
-          <div class="box3">
-            <b>Extensive Database:</b> Access a vast pool of unemployed talent, ready to start working on your project immediately.<br>
-            <b>Cost-Effective:</b> Save on recruitment costs and hire professionals at competitive rates.<br>
-            <b>Time-Efficient:</b> Our streamlined process ensures you get the talent you need faster than traditional hiring methods.<br>
-            <b>Quality Assurance:</b> Each candidate in our database is vetted for their skills and experience, ensuring you get top-notch professionals.<br>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="aboutTwo">
-      <div class="box1">
-        <div class="box2">
-          <div class="box3">
-            <b>Post Your Project:</b> Describe your project and the type of talent you require.<br>
-            <b>Browse Talent:</b> View profiles of available professionals and select the best fit for your project.<br>
-            <b>Hire and Start:</b> Hire the chosen professional and get started on your project right away.<br>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <b>How It Works</b>.
-      </div>
-    </div>
-    <hr>
-    <div class="aboutOne">
-      <div class="box">
-        <b>Our Values</b>
-      </div>
-      <div class="box1">
-        <div class="box2">
-          <div class="box3">
-            <b>Integrity:</b> We believe in honesty and transparency in all our interactions.<br>
-            <b>Quality:</b> We are committed to providing high-quality services to both job seekers and employers.<br>
-            <b>Innovation:</b> We continuously improve our platform to offer the best user experience and the latest job-matching technology.<br>
-            <b>Community:</b> We foster a supportive community where professionals can grow, connect, and succeed.
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="box4">
-      <div class="box5">
-        <b>Join Us</b>
-      </div>
-      <p>Whether you're a job seeker looking for your next project or an employer searching for talented team members, <span class="name">Unemployed</span><span class="surname">Online</span> is here to help. Register today and take the first step towards a new way of hiring and working.</p>      
-      <a href="./LogIn/Register.html" class="btn">LogIn/Register</a>
-    </div>
-    <hr>
-    <div class="box4">
-      <div class="box5">
-        <b>Contact us</b>
-      </div>
-      <p style="padding-bottom: 50px;">
-        Have questions or need assistance? Contact our support team at <a href="mailto:support@unemployedonline.in" style="all: unset; display: inline; cursor: pointer; color: blue;">support@unemployedonline.in</a>.
-        We're here to help you find the perfect talent for your project.
-    </p>
-    
-    
-    </div>
-    
+<body class="flex flex-col min-h-screen bg-white font-sans">
 
-    <!-- footer section started here -->
-    <footer>
-        <div class="container">
-          <div class="logo1">
-            <img src="./img/logoWhite.png" alt="Unemployed Online Logo">
-            <a href="./index.html">
-              <span class="name">Unemployed</span><span class="surname">Online</span>
-            </a>
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="#" class="text-gray-900 font-semibold">About Us</a>
+        <a href="ourTeam.html" class="text-gray-700 hover:text-indigo-600">Our Team</a>
+        <a href="./LogIn/contact-us.html" class="text-gray-700 hover:text-indigo-600">Contact</a>
+        <a href="./LogIn/Register.html" class="ml-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-indigo-600 to-green-500 text-white py-20 px-4 text-center">
+      <h1 class="text-5xl font-bold mb-4">About Us</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        We build bridges between companies and skilled professionals, helping startups and enterprises find project-ready talent fast.
+      </p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">What We Do ✅</h2>
+        <p class="text-gray-600 text-lg">
+          At <strong>Unemployed<span class="text-green-500">Online</span></strong>, we connect talented individuals with recruiters and startup founders for freelance and short-term projects. Our database includes both technical 💻 and non-technical 👥 professionals.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="bg-gray-50 py-16 px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-3">🛠️ Our Services</h3>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li><strong>Technical Talent:</strong> Developers, designers, IT pros</li>
+            <li><strong>Non-Technical Talent:</strong> Marketing, Admin, Sales</li>
+            <li><strong>Flexible Hiring:</strong> Hire for a week or a year</li>
+            <li><strong>Fast Matching:</strong> Get talent onboard within days</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-3">🚀 Why Choose Us</h3>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li><strong>Large Database:</strong> Skilled professionals ready now</li>
+            <li><strong>Affordable:</strong> Save on full-time hiring costs</li>
+            <li><strong>Time-Saving:</strong> Streamlined selection process</li>
+            <li><strong>Verified Talent:</strong> We pre-vet every applicant</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">🔄 How It Works</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 shadow rounded">
+            <h4 class="font-semibold text-indigo-600">📝 Post Your Project</h4>
+            <p class="text-gray-600">Tell us what you're building and who you need.</p>
           </div>
-          <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="#" onclick="return false;">About Us</a>
-            <a href="./LogIn/contact-us.html">Contact Us</a>
-            <a href="ourTeam.html">Our Team</a>
+          <div class="bg-white p-6 shadow rounded">
+            <h4 class="font-semibold text-indigo-600">👀 Browse Talent</h4>
+            <p class="text-gray-600">Search our database of job seekers and freelancers.</p>
           </div>
-          <div class="subscribe-form">
-            <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
-            <div class="input-container">
-              <input type="email" id="footer-email" placeholder="Enter your email">
-              <span class="error-icon" id="email-error-icon">!</span>
-          </div>
-          <button type="submit" id="footer-submit" disabled>Submit</button>
+          <div class="bg-white p-6 shadow rounded">
+            <h4 class="font-semibold text-indigo-600">🚀 Hire and Start</h4>
+            <p class="text-gray-600">Connect instantly and get to work.</p>
           </div>
         </div>
-        <div class="copyright">
-          &copy; 2024 UnemployedOnline. All rights reserved.
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="bg-indigo-50 py-16 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">💚 Our Values</h2>
+        <div class="grid md:grid-cols-2 gap-10 text-left">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <p><strong>🤝 Integrity:</strong> We prioritize honesty and trust in every connection.</p>
+            <p class="mt-4"><strong>✨ Quality:</strong> Only the best, pre-screened talent make the cut.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <p><strong>💡 Innovation:</strong> We’re constantly improving our platform and tech.</p>
+            <p class="mt-4"><strong>🌍 Community:</strong> We empower professionals globally to succeed.</p>
+          </div>
         </div>
-    </footer>
-<script src="script.js"></script>
+      </div>
+    </section>
+
+    <!-- Join Us CTA -->
+    <section class="py-16 px-4 bg-gradient-to-r from-green-500 to-indigo-600 text-white text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="mb-6">Join thousands of professionals and businesses using <strong>UnemployedOnline</strong> today.</p>
+      <a href="./LogIn/Register.html" class="inline-block bg-white text-indigo-600 px-6 py-2 rounded shadow hover:bg-gray-200">LogIn / Register</a>
+    </section>
+
+    <!-- Contact Us -->
+    <section class="bg-white py-12 px-4 text-center">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">📧 Contact Us</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Have questions or need help? Reach our support team at <a href="mailto:support@unemployedonline.in" class="text-blue-600 underline">support@unemployedonline.in</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="./img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="index.html" class="hover:text-indigo-500">Home</a>
+        <a href="#" class="text-indigo-500 font-semibold">About Us</a>
+        <a href="./LogIn/contact-us.html" class="hover:text-indigo-500">Contact</a>
+        <a href="ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <label for="footer-email" class="block text-sm font-medium">Subscribe</label>
+        <input type="email" id="footer-email" placeholder="Enter your email" class="mt-2 px-4 py-2 rounded border w-64">
+        <button class="mt-2 w-full md:w-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Submit</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Widget -->
+  <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+  <div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
+    <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+  <script>
+    const icon = document.getElementById('chat-icon');
+    const box = document.getElementById('chat-box');
+    icon.addEventListener('click', () => {
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
 </body>
-<style>
-  #chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 10000;
-  }
-</style>
-
-<img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60">
-
-<div id="chat-box" style="display:none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 9999;">
-  <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
-</div>
-
-<script>
-  const icon = document.getElementById('chat-icon');
-  const box = document.getElementById('chat-box');
-
-  icon.addEventListener('click', () => {
-    box.style.display = box.style.display === 'none' ? 'block' : 'none';
-  });
-</script>
 </html>

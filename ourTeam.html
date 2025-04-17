@@ -1,104 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Our Teams</title>
-        <link rel="stylesheet" href="./LogIn/style1.css">
-        <link rel="icon" href="./img/logo.png" type="image/x-icon">
-    </head>
-    <body>
-        <!-- for hearder  -->
-        <input type="checkbox" class="menu-toggle" id="menu-toggle"> <!-- Moved checkbox here -->
-        <header class="fixed-header">
-            <div class="logo">
-                <a href="./index.html" >
-                    <span class="name">Unemployed</span><span class="surname">Online</span>
-                </a>
-            </div>
-            <div class="auth">
-                <a href="./LogIn/Register.html" class="btn">LogIn/Register</a>
-                <a href="./LogIn/contact-us.html" class="contact-link">Contact Us</a>
-            </div>
-        </header>
-        <label for="menu-toggle" class="menu-icon"> <!-- Added for attribute -->
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-<!-- our team  -->
-        <div class="container3">
-            <h1>Our Leadership Team</h1>
-            <div class="team-member">
-            <img src="./img/saurabh.jpeg" alt="Saurabh Kumar">
-            <h3>Saurabh Kumar</h3>
-            <p>C0-FOUNDER & CO-CEO</p>
-            </div>
-            <div class="team-member">
-            <img src="./img/poorti.jpg" alt="Poorti Sharma">
-            <h3>Poorti Sharma</h3>
-            <p>CO-FOUNDER & PRESIDENT</p> <!-- changed this -->
-            </div>
-            <div class="team-member">
-            <img src="./img/nitin.jpeg" alt="Nitin Srivastava">
-            <h3>Nitin Srivastava</h3>
-            <p>C0-FOUNDER & CO-CEO</p>
-            </div>
-        </div>
-<!-- footer -->
-        <footer>
-            <div class="container">
-              <div class="logo1">
-                <a href="./index.html">
-                    <img src="./img/logoWhite.png" alt="Unemployed Online Logo">
-                </a>
-                <a href="index.html">
-                  <span class="name">Unemployed</span><span class="surname">Online</span>
-                </a>
-              </div>
-              <div class="nav-links">
-                <a href="./index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="./LogIn/contact-us.html">Contact Us</a>
-                <a href="#" onclick="return false;">Our Team</a>
-              </div>
-              <div class="subscribe-form">
-                <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
-                <div class="input-container">
-                  <input type="email" id="footer-email" placeholder="Enter your email">
-                  <span class="error-icon" id="email-error-icon">!</span>
-              </div>
-              <button type="submit" id="footer-submit" disabled>Submit</button>
-              </div>
-            </div>
-            <div class="copyright">
-              &copy; 2024 UnemployedOnline. All rights reserved.
-            </div>
-          </footer>
-      <script src="script.js"></script>
-    </body>
-    <style>
-      #chat-icon {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 10000;
-      }
-    </style>
-    
-    <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60">
-    
-    <div id="chat-box" style="display:none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 9999;">
-      <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="about-us.html" class="text-gray-700 hover:text-indigo-600">About Us</a>
+        <a href="ourTeam.html" class="text-gray-900 font-semibold">Our Team</a>
+        <a href="./LogIn/contact-us.html" class="text-gray-700 hover:text-indigo-600">Contact</a>
+        <a href="./LogIn/Register.html" class="ml-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Get Started</a>
+      </nav>
     </div>
-    
-    <script>
-      const icon = document.getElementById('chat-icon');
-      const box = document.getElementById('chat-box');
-    
-      icon.addEventListener('click', () => {
-        box.style.display = box.style.display === 'none' ? 'block' : 'none';
-      });
-    </script>
+  </header>
+
+  <!-- Team Section -->
+  <main class="flex-grow">
+    <section class="max-w-7xl mx-auto py-20 px-4">
+      <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Leadership Team</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="bg-white text-center rounded-lg shadow-md p-6 hover:shadow-xl">
+          <img class="w-32 h-32 rounded-full mx-auto" src="./img/saurabh.jpeg" alt="Saurabh Kumar">
+          <h3 class="mt-4 text-xl font-semibold">Saurabh Kumar</h3>
+          <p class="text-indigo-600 font-medium">CO-FOUNDER & CO-CEO</p>
+        </div>
+        <div class="bg-white text-center rounded-lg shadow-md p-6 hover:shadow-xl">
+          <img class="w-32 h-32 rounded-full mx-auto" src="./img/poorti.jpg" alt="Poorti Sharma">
+          <h3 class="mt-4 text-xl font-semibold">Poorti Sharma</h3>
+          <p class="text-indigo-600 font-medium">CO-FOUNDER & PRESIDENT</p>
+        </div>
+        <div class="bg-white text-center rounded-lg shadow-md p-6 hover:shadow-xl">
+          <img class="w-32 h-32 rounded-full mx-auto" src="./img/nitin.jpeg" alt="Nitin Srivastava">
+          <h3 class="mt-4 text-xl font-semibold">Nitin Srivastava</h3>
+          <p class="text-indigo-600 font-medium">CO-FOUNDER & CO-CEO</p>
+        </div>
+      </div>
+    </section>
+
+     <!-- What Drives Us Section -->
+     <section class="bg-gray-50 py-16 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">What Drives Us</h2>
+        <p class="text-gray-600 text-lg">
+          At <strong>UnemployedOnline</strong>, we believe everyone deserves a chance to thrive. We exist to unlock potential by connecting untapped talent to meaningful work. Our mission is built on empathy, innovation, and the determination to challenge outdated hiring systems.
+        </p>
+        <p class="text-gray-600 mt-4">
+          Whether you’re a startup founder or a job seeker, we are here to make opportunities more accessible, faster to find, and built on human-first principles.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="./img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="index.html" class="hover:text-indigo-500">Home</a>
+        <a href="about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="./LogIn/contact-us.html" class="hover:text-indigo-500">Contact</a>
+        <a href="#" class="text-indigo-500 font-semibold">Our Team</a>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <label for="footer-email" class="block text-sm font-medium">Subscribe</label>
+        <input type="email" id="footer-email" placeholder="Enter your email" class="mt-2 px-4 py-2 rounded border w-64">
+        <button class="mt-2 w-full md:w-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Submit</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Widget -->
+  <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+
+  <div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
+    <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+
+  <script>
+    const icon = document.getElementById('chat-icon');
+    const box = document.getElementById('chat-box');
+    icon.addEventListener('click', () => {
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
+</body>
 </html>

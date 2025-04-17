@@ -1,131 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Sales</title>
-        <link rel="stylesheet" href="style1.css">
-        <link rel="icon" href="../img/logo.png" type="image/x-icon">
-    </head>
-    <body>
-        <!-- for hearder  -->
-        <input type="checkbox" class="menu-toggle" id="menu-toggle"> <!-- Moved checkbox here -->
-        <header class="fixed-header">
-            <div class="logo">
-                <a href="../index.html" >
-                    <span class="name">Unemployed</span><span class="surname">Online</span>
-                </a>
-            </div>
-            <div class="auth">
-                <a href="Register.html" class="btn">LogIn/Register</a>
-                <a href="contact-us.html" onclick="return false;" class="contact-link">Contact Us</a>
-            </div>
-        </header>
-        <label for="menu-toggle" class="menu-icon"> <!-- Added for attribute -->
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <!-- header ended here -->
-        <section class="first">
-            <div class="left">
-                <div class="why">
-                    Contact our sales team
-                </div>
-                <div class="detailsWhy">
-                        <p class="detailsWhy">Build your project - cheaper - faster - with professional team. Backed by advanced security, custom traffic scaling, guaranteed uptime, and much more.</p>
-                </div>
-            </div>
-            <div class="right">
-                <div class="form-container">
-                    <form>
-                        <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" placeholder="Enter your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="Enter valid email address">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="Enter valid phone number">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" placeholder="Enter your company name">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="agree">
-                            <span class="checkboxText">
-                                <label for="agree">By submitting this form, you agree to <span class="name">Unemployed</span><span class="surname">Online</span> <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
-                            </span>
-                        </div>                    
-                        <button type="submit" onclick="saveToFile()" class="submit-button">Contact sales</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Sales - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-white font-sans">
 
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="../about-us.html" class="text-gray-700 hover:text-indigo-600">About Us</a>
+        <a href="#" class="text-gray-900 font-semibold">Contact</a>
+        <a href="../ourTeam.html" class="text-gray-700 hover:text-indigo-600">Our Team</a>
+        <a href="Register.html" class="ml-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Get Started</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- footer section started here -->
-        <footer>
-            <div class="container">
-              <div class="logo1">
-                <a href="../index.html" >
-                    <img src="../img/logoWhite.png" alt="Unemployed Online Logo">
-                </a>
-                <a href="../index.html">
-                  <span class="name">Unemployed</span><span class="surname">Online</span>
-                </a>
-              </div>
-              <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="../about-us.html">About Us</a>
-                <a href="#" onclick="return false;">Contact Us</a>
-                <a href="../ourTeam.html">Our Team</a>
-              </div>
-              <div class="subscribe-form">
-                <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
-                <div class="input-container">
-                    <input type="email" id="footer-email" placeholder="Enter your email">
-                    <span class="error-icon" id="email-error-icon">!</span>
-                </div>
-                <button type="submit" id="footer-submit" disabled>Submit</button>
-              </div>
+  <main class="flex-grow">
+    <!-- Contact Hero -->
+    <section class="bg-gradient-to-r from-indigo-600 to-green-500 text-white py-20 px-4 text-center">
+      <h1 class="text-5xl font-bold mb-4">Contact Sales</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Build your project cheaper, faster, and more efficiently with our professional team. Backed by advanced security, scalability, and support.
+      </p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Get In Touch</h2>
+          <p class="text-gray-600 mb-6">Fill out the form and our team will get back to you shortly.</p>
+          <ul class="text-gray-700 space-y-2">
+            <li>📧 Email: <a href="mailto:support@unemployedonline.in" class="text-blue-600 hover:underline">support@unemployedonline.in</a></li>
+            <li>📍 Location: Remote-first, serving globally</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <form class="space-y-4">
+            <div>
+              <label class="block font-medium text-gray-700">Full Name</label>
+              <input type="text" placeholder="Your full name" class="w-full mt-1 px-4 py-2 border rounded">
             </div>
-            <div class="copyright">
-                &copy; 2024 UnemployedOnline. All rights reserved.
+            <div>
+              <label class="block font-medium text-gray-700">Email</label>
+              <input type="email" placeholder="you@example.com" class="w-full mt-1 px-4 py-2 border rounded">
             </div>
-          </footer>
-    <script src="../script.js"></script>
-</body>
-<style>
-    #chat-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 10000;
-    }
-  </style>
-  
-  <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60">
-  
-  <div id="chat-box" style="display:none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 9999;">
+            <div>
+              <label class="block font-medium text-gray-700">Phone Number</label>
+              <input type="tel" placeholder="+91 9876543210" class="w-full mt-1 px-4 py-2 border rounded">
+            </div>
+            <div>
+              <label class="block font-medium text-gray-700">Company Name</label>
+              <input type="text" placeholder="Company or Organization" class="w-full mt-1 px-4 py-2 border rounded">
+            </div>
+            <div>
+              <label class="block font-medium text-gray-700">Message</label>
+              <textarea rows="4" placeholder="Tell us more..." class="w-full mt-1 px-4 py-2 border rounded"></textarea>
+            </div>
+            <div class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-2">
+              <label class="text-sm text-gray-600">By submitting, you agree to our <a href="#" class="text-blue-600 underline">Terms</a> and <a href="#" class="text-blue-600 underline">Privacy Policy</a>.</label>
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700 transition">Contact Sales</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="../img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="../index.html" class="hover:text-indigo-500">Home</a>
+        <a href="../about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="#" class="text-indigo-500 font-semibold">Contact</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <label for="footer-email" class="block text-sm font-medium">Subscribe</label>
+        <input type="email" id="footer-email" placeholder="Enter your email" class="mt-2 px-4 py-2 rounded border w-64">
+        <button class="mt-2 w-full md:w-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Submit</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Widget -->
+  <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+  <div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
     <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
   </div>
-  
   <script>
     const icon = document.getElementById('chat-icon');
     const box = document.getElementById('chat-box');
-  
     icon.addEventListener('click', () => {
       box.style.display = box.style.display === 'none' ? 'block' : 'none';
     });
   </script>
+</body>
 </html>

@@ -1,116 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UnemployedOnline</title>
-        <link rel="stylesheet" href="style1.css">
-        <link rel="icon" href="../img/logo.png" type="image/x-icon">
-    </head>
-    <body>
-        <!-- for hearder  -->
-        <input type="checkbox" class="menu-toggle" id="menu-toggle"> <!-- Moved checkbox here -->
-        <header class="fixed-header">
-            <div class="logo">
-                <a href="../index.html" >
-                    <span class="name">Unemployed</span><span class="surname">Online</span>
-                </a>
-            </div>
-            <div class="auth">
-                <a href="Register.html" onclick="return false;" class="btn">LogIn/Register</a>
-                <a href="contact-us.html" class="contact-link">Contact Us</a>
-            </div>
-        </header>
-        <label for="menu-toggle" class="menu-icon"> <!-- Added for attribute -->
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <!-- header ended here -->
-        <section class="first">
-            <div class="left">
-                <div class="why">
-                    Why <br> Unemployed<span class="surname">Online</span>?
-                </div>
-                <div class="detailsWhy">
-                        <ul>
-                            <li><b>Exclusive Access to Projects:</b> Gain access to a wide variety of project-based opportunities from reputable companies and startups.</li>
-                            <li><b>Boost Your Resume:</b> Enhance your resume with diverse project experiences.</li>
-                            <li><b>Flexible Work:</b> Find opportunities that fit your schedule and preferences, whether you prefer remote work or on-site projects.</li>
-                            <li><b>Professional Growth:</b> Gain experience, develop new skills, and expand your professional network.</li>
-                            <li><b>Quick and Easy Registration:</b> Create your profile in minutes and start applying for projects immediately.</li>
-                        </ul>
-                </div>
-            </div>
-            <div class="right">
-                <div class="container001">
-                    <div class="login-option google">Google LogIn</div>
-                    <div class="login-option linkedin">LinkedIn LogIn</div>
-                    <div class="login-option phone">Phone LogIn</div>
-                    <input type="email" class="input-field" placeholder="Enter email address">
-                    <input type="password" class="input-field" placeholder="Password">
-                    <a href="#" class="forgot-password">Forget password?</a>
-                    <button class="login-btn">Log in</button>
-                    <div class="divider">OR</div>
-                    <a href="../Signup/signup-first.html" class="register">Register New User</a>
-                </div>
-            </div>
-        </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Register - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-white font-sans">
 
-        <!-- footer section started here -->
-        <footer>
-            <div class="container">
-              <div class="logo1">
-                <a href="../index.html" >
-                    <img src="../img/logoWhite.png" alt="Unemployed Online Logo">
-                </a>
-                <a href="../index.html">
-                  <span class="name">Unemployed</span><span class="surname">Online</span>
-                </a>
-              </div>
-              <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="../about-us.html">About Us</a>
-                <a href="./contact-us.html">Contact Us</a>
-                <a href="../ourTeam.html">Our Team</a>
-              </div>
-              <div class="subscribe-form">
-                <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
-                <div class="input-container">
-                    <input type="email" id="footer-email" placeholder="Enter your email">
-                    <span class="error-icon" id="email-error-icon">!</span>
-                </div>
-                <button type="submit" id="footer-submit" disabled>Submit</button>
-              </div>
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="Register.html" class="text-indigo-600 font-semibold">LogIn/Register</a>
+        <a href="contact-us.html" class="text-gray-700 hover:text-indigo-600">Contact</a>
+        <a href="../ourTeam.html" class="text-gray-700 hover:text-indigo-600">Our Team</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <section class="py-20 px-4 bg-gradient-to-r from-indigo-600 to-green-500 text-white text-center">
+      <h1 class="text-4xl font-bold mb-4">Welcome to Unemployed<span class="text-white">Online</span></h1>
+      <p class="max-w-2xl mx-auto">Access exclusive projects, boost your resume, and work flexibly from anywhere. Sign in or create your account to begin.</p>
+    </section>
+
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">✨ Why Join?</h2>
+          <ul class="list-disc text-gray-700 pl-6 space-y-2">
+            <li><strong>Exclusive Access:</strong> Project-based jobs from trusted startups</li>
+            <li><strong>Boost Resume:</strong> Add impactful gigs and skills</li>
+            <li><strong>Flexible Work:</strong> Remote and hybrid options available</li>
+            <li><strong>Professional Growth:</strong> Grow your network and experience</li>
+            <li><strong>Quick Signup:</strong> Create a profile and get started in minutes</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold text-center mb-6">Log In</h3>
+          <div class="space-y-3 mb-6">
+            <button class="w-full bg-white border border-gray-300 px-4 py-2 rounded hover:bg-gray-100">🔒 Google Login</button>
+            <button class="w-full bg-white border border-gray-300 px-4 py-2 rounded hover:bg-gray-100">💼 LinkedIn Login</button>
+            <button class="w-full bg-white border border-gray-300 px-4 py-2 rounded hover:bg-gray-100">📱 Phone Login</button>
+          </div>
+          <div class="space-y-4">
+            <input type="email" placeholder="Email address" class="w-full px-4 py-2 border rounded" />
+            <input type="password" placeholder="Password" class="w-full px-4 py-2 border rounded" />
+            <div class="text-right">
+              <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
             </div>
-            <div class="copyright">
-                &copy; 2024 UnemployedOnline. All rights reserved.
-            </div>
-          </footer>
-    <script src="../script.js"></script>
-    </body>
-    <style>
-        #chat-icon {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          cursor: pointer;
-          z-index: 10000;
-        }
-      </style>
-      
-      <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60">
-      
-      <div id="chat-box" style="display:none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 9999;">
-        <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+            <button class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Log In</button>
+          </div>
+          <div class="text-center mt-6 text-gray-600">OR</div>
+          <div class="text-center mt-4">
+            <a href="../Signup/signup-first.html" class="text-indigo-600 font-semibold hover:underline">Register New User</a>
+          </div>
+        </div>
       </div>
-      
-      <script>
-        const icon = document.getElementById('chat-icon');
-        const box = document.getElementById('chat-box');
-      
-        icon.addEventListener('click', () => {
-          box.style.display = box.style.display === 'none' ? 'block' : 'none';
-        });
-      </script>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="../img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="../index.html" class="hover:text-indigo-500">Home</a>
+        <a href="../about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="contact-us.html" class="hover:text-indigo-500">Contact</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <label for="footer-email" class="block text-sm font-medium">Subscribe</label>
+        <input type="email" id="footer-email" placeholder="Enter your email" class="mt-2 px-4 py-2 rounded border w-64">
+        <button class="mt-2 w-full md:w-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Submit</button>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<!-- Chat Widget -->
+<img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+<div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
+  <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+<script>
+  const icon = document.getElementById('chat-icon');
+  const box = document.getElementById('chat-box');
+  icon.addEventListener('click', () => {
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  });
+</script>
 </html>

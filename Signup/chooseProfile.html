@@ -1,112 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnemployedOnline</title>
-    <link rel="stylesheet" href="style2.css">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Role - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- for hearder  -->
-    <input type="checkbox" class="menu-toggle" id="menu-toggle"> <!-- Moved checkbox here -->
-    <header class="fixed-header">
-      <div class="logo">
-          <a href="../index.html">
-              <span class="name">Unemployed</span><span class="surname">Online</span>
-          </a>
-      </div>
-      <div class="auth">
-          <a href="./LogIn/Register.html" onclick="return false;" class="btn">LogIn/Register</a>
-          <a href="../LogIn/contact-us.html" class="contact-link">Contact Us</a>
-      </div>
-  </header>
-    <label for="menu-toggle" class="menu-icon"> <!-- Added for attribute -->
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <!-- header section ended -->
-    <!-- selct your employment content here -->
-    <div class="container4">
-        <h1>Are you a Employed or Unemployed?</h1>
-      <a href="./employed.html">
-        <div class="employment">
-          <img src="../img/employee-logo.jpg" alt="Employed">
-          <h3>Employed</h3>
-        </div>
-      </a>
+<body class="flex flex-col min-h-screen bg-white font-sans">
 
-      <a href="./unemployed.html">
-        <div class="employment">
-          <img src="../img/unemployee-logo.jpg" alt="Unemployed">
-          <h3>Unemployed</h3>
-        </div>
-      </a>
-
-      <a href="./fresher.html">
-        <div class="employment">
-          <img src="../img/fresher.jpg" alt="fresher">
-          <h3>Fresher</h3>
-        </div>
-      </a>
-
-      <p>Already have an account? <a href="../LogIn/Register.html" class="link sign-in">Sign in</a></p>
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="../LogIn/Register.html" class="text-indigo-600 font-semibold">LogIn/Register</a>
+        <a href="../LogIn/contact-us.html" class="text-gray-700 hover:text-indigo-600">Contact</a>
+        <a href="../ourTeam.html" class="text-gray-700 hover:text-indigo-600">Our Team</a>
+      </nav>
     </div>
-    
-    <!-- selct your employment content ended here -->
-    <!-- footer section started here -->
-    <footer>
-        <div class="container">
-          <div class="logo1">
-            <img src="../img/logoWhite.png" alt="Unemployed Online Logo">
-            <a href="../index.html">
-              <span class="name">Unemployed</span><span class="surname">Online</span>
-            </a>
-          </div>
-          <div class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="../about-us.html">About Us</a>
-            <a href="../LogIn/contact-us.html">Contact Us</a>
-            <a href="../ourTeam.html">Our Team</a>
-          </div>
-          <div class="subscribe-form">
-            <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
-            <div class="input-container">
-              <input type="email" id="footer-email" placeholder="Enter your email">
-              <span class="error-icon" id="email-error-icon">!</span>
-          </div>
-          <button type="submit" id="footer-submit" disabled>Submit</button>
-          </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-purple-700 to-green-500 text-white py-20 text-center">
+    <h1 class="text-5xl font-bold mb-4">Where Are You in Your Journey?</h1>
+    <p class="text-lg max-w-2xl mx-auto">Select a category that best represents you to get started on tailored opportunities and support from UnemployedOnline.</p>
+  </section>
+
+  <!-- Role Selection Cards -->
+  <main class="flex-grow py-16 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <a href="./employed.html" class="group block bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Employed" class="mx-auto h-28 mb-4">
+        <h3 class="text-xl font-semibold text-indigo-700 group-hover:underline">I'm Employed</h3>
+        <p class="text-sm text-gray-600 mt-2">Looking for freelance projects or side gigs? Let’s connect you with the right partners.</p>
+      </a>
+      <a href="./unemployed.html" class="group block bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="Unemployed" class="mx-auto h-28 mb-4">
+        <h3 class="text-xl font-semibold text-indigo-700 group-hover:underline">I'm Unemployed</h3>
+        <p class="text-sm text-gray-600 mt-2">Ready to jump back in? We’ll help match you with meaningful work opportunities.</p>
+      </a>
+      <a href="./fresher.html" class="group block bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="Fresher" class="mx-auto h-28 mb-4">
+        <h3 class="text-xl font-semibold text-indigo-700 group-hover:underline">I'm a Fresher</h3>
+        <p class="text-sm text-gray-600 mt-2">New to the job market? We’re here to help you gain experience and grow your career.</p>
+      </a>
+    </div>
+    <p class="text-center mt-10 text-gray-700 text-sm">Already have an account? <a href="../LogIn/Register.html" class="text-indigo-600 font-medium hover:underline">Sign in</a></p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="../img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
         </div>
-        <div class="copyright">
-          &copy; 2024 UnemployedOnline. All rights reserved.
-        </div>
-      </footer>
-    <script src="signup.js"></script>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="../index.html" class="hover:text-indigo-500">Home</a>
+        <a href="../about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="../LogIn/contact-us.html" class="hover:text-indigo-500">Contact</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <label for="footer-email" class="block text-sm font-medium">Subscribe</label>
+        <input type="email" id="footer-email" placeholder="Enter your email" class="mt-2 px-4 py-2 rounded border w-64">
+        <button type="submit" class="mt-2 w-full md:w-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Submit</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Widget -->
+  <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+  <div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
+    <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+  <script>
+    const icon = document.getElementById('chat-icon');
+    const box = document.getElementById('chat-box');
+    icon.addEventListener('click', () => {
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
 </body>
-<style>
-  #chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 10000;
-  }
-</style>
-
-<img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60">
-
-<div id="chat-box" style="display:none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 9999;">
-  <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
-</div>
-
-<script>
-  const icon = document.getElementById('chat-icon');
-  const box = document.getElementById('chat-box');
-
-  icon.addEventListener('click', () => {
-    box.style.display = box.style.display === 'none' ? 'block' : 'none';
-  });
-</script>
 </html>

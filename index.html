@@ -1,102 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnemployedOnline</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- for hearder  -->
-    <input type="checkbox" class="menu-toggle" id="menu-toggle"> <!-- Moved checkbox here -->
-    <header class="fixed-header">
-        <div class="logo">
-            <a href="" onclick="return false;">
-                <span class="name">Unemployed</span><span class="surname">Online</span>
-            </a>
-        </div>
-        <div class="auth">
-            <a href="./LogIn/Register.html" class="btn">LogIn/Register</a>
-            <a href="./LogIn/contact-us.html" class="contact-link">Contact Us</a>
-        </div>
-    </header>
-    <label for="menu-toggle" class="menu-icon"> 
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <!-- header coded ended -->
-    <section class="firstSection" id="topSection">
-        <div class="leftSection">
-            <div class="why">Welcome to<br>Unemployed<span class="surname">Online</span></div>
-            <div class="textBlock textBlock1">
-                <p class="textgrey">
-                    <b>Hire for your project, cheaper, faster, and professional.</b>
-                </p>
-            </div>
-            <div class="textBlock textBlock3">
-                <p class="detailsWhy">
-                    At <strong>Unemployed<span class="green">Online</span></strong>, we specialize in connecting talented, unemployed individuals with recruiters and startup founders looking for short-term project teams. Our extensive database includes both technical and non-technical professionals ready to contribute to your project needs.
-                </p>
-            </div>
-        </div>
-        <div class="rightSection">
-            <img src="img/home.png" alt="first_img">
+<body class="bg-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="about-us.html" class="text-gray-700 hover:text-indigo-600">About Us</a>
+        <a href="ourTeam.html" class="text-gray-700 hover:text-indigo-600">Our Team</a>
+        <a href="./LogIn/contact-us.html" class="text-gray-700 hover:text-indigo-600">Contact</a>
+        <a href="./LogIn/Register.html" class="ml-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-5xl font-bold text-gray-900 leading-tight">Find Talent Faster with <span class="text-green-500">UnemployedOnline</span></h1>
+        <p class="mt-6 text-lg text-gray-600">We connect talented unemployed individuals with startups and recruiters who need fast, reliable contributors for short-term and freelance work.</p>
+        <a href="./LogIn/Register.html" class="mt-6 inline-block bg-green-500 text-white font-semibold px-6 py-3 rounded hover:bg-green-600 transition">Start Hiring Now</a>
       </div>
-    </section>  
-    <!-- footer section started here -->
-    <footer>
-      <div class="container">
-        <div class="logo1">
-          <img src="./img/logoWhite.png" alt="Unemployed Online Logo">
-          <a href="#topSection">
-            <span class="name">Unemployed</span><span class="surname">Online</span>
-          </a>
-        </div>
-        <div class="nav-links">
-          <a href="#topSection">Home</a>
-          <a href="about-us.html">About Us</a>
-          <a href="./LogIn/contact-us.html">Contact Us</a>
-          <a href="ourTeam.html">Our Team</a>
-        </div>
-        <div class="subscribe-form">
-          <label>Subscribe to <span class="name">Unemployed</span><span class="surname">Online</span></label>
-          <div class="input-container">
-            <input type="email" id="footer-email" placeholder="Enter your email">
-            <span class="error-icon" id="email-error-icon">!</span>
-        </div>
-        <button type="submit" id="footer-submit" disabled>Submit</button>
-        </div>
+      <div>
+        <!-- <img src="https://undraw.co/api/illustrations/9c4562cf-7602-4cb3-812f-0373b27697ff" alt="Illustration" class="w-full rounded"> -->
       </div>
-      <div class="copyright">
-        &copy; 2024 UnemployedOnline. All rights reserved.
+    </div>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="max-w-7xl mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Us</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center bg-white shadow-md p-6 rounded hover:shadow-xl">
+        <div class="text-4xl mb-4 text-indigo-600">👨‍💻</div>
+        <h3 class="text-xl font-semibold">Skilled Professionals</h3>
+        <p class="text-gray-600 mt-2">Access a curated pool of vetted freelancers ready to join your team.</p>
       </div>
-    </footer>
-  <script src="script.js"></script>
+      <div class="text-center bg-white shadow-md p-6 rounded hover:shadow-xl">
+        <div class="text-4xl mb-4 text-indigo-600">🤝</div>
+        <h3 class="text-xl font-semibold">Seamless Collaboration</h3>
+        <p class="text-gray-600 mt-2">Use tools that make onboarding and communication effortless.</p>
+      </div>
+      <div class="text-center bg-white shadow-md p-6 rounded hover:shadow-xl">
+        <div class="text-4xl mb-4 text-indigo-600">⚡</div>
+        <h3 class="text-xl font-semibold">Quick Turnaround</h3>
+        <p class="text-gray-600 mt-2">Get projects off the ground in record time with available talent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="./img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="index.html" class="hover:text-indigo-500">Home</a>
+        <a href="about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+        <a href="./LogIn/contact-us.html" class="hover:text-indigo-500">Contact</a>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <label for="footer-email" class="block text-sm font-medium">Subscribe</label>
+        <input type="email" id="footer-email" placeholder="Enter your email" class="mt-2 px-4 py-2 rounded border w-64">
+        <button class="mt-2 w-full md:w-auto bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Submit</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Widget -->
+  <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+
+  <div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
+    <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+
+  <script>
+    const icon = document.getElementById('chat-icon');
+    const box = document.getElementById('chat-box');
+    icon.addEventListener('click', () => {
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
 </body>
-<style>
-  #chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 10000;
-  }
-</style>
-
-<img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60">
-
-<div id="chat-box" style="display:none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.2); z-index: 9999;">
-  <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
-</div>
-
-<script>
-  const icon = document.getElementById('chat-icon');
-  const box = document.getElementById('chat-box');
-
-  icon.addEventListener('click', () => {
-    box.style.display = box.style.display === 'none' ? 'block' : 'none';
-  });
-</script>
 </html>
