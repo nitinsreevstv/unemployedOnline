@@ -75,10 +75,10 @@
 
         <p id="status" class="text-sm text-gray-600 mt-4 hidden">⏳ Scraping in progress...</p>
 
-        <a id="download-btn" href="#" download="scraped_output.pdf"
-          class="hidden mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+        <button id="download-btn" type="button"
+          class="hidden mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
           ⬇️ Download PDF
-        </a>
+        </button>
       </form>
     </div>
   </section>
@@ -103,14 +103,16 @@
     </div>
   </footer>
 
-  <!-- WebBot -->
+  <!-- Chat Widget -->
   <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
   <div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
     <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
   </div>
 
-  <!-- JavaScript for scraping logic -->
+  <!-- JavaScript -->
   <script>
+    let sessionId = null;
+
     window.addEventListener("DOMContentLoaded", () => {
       const form = document.getElementById("scrape-form");
       const status = document.getElementById("status");
@@ -118,69 +120,85 @@
       const btnText = document.getElementById("btn-text");
       const spinner = document.getElementById("spinner");
       const downloadBtn = document.getElementById("download-btn");
-  
-      if (!form) {
-        console.error("❌ Form not found!");
-        return;
-      }
-  
+
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        console.log("✅ Form submitted");
-  
         const formData = new FormData(form);
-  
+
         status.textContent = "⏳ Scraping in progress...";
         status.classList.remove("hidden");
         btnText.textContent = "Scraping...";
         spinner.classList.remove("hidden");
         scrapeBtn.disabled = true;
         downloadBtn.classList.add("hidden");
-  
+
         try {
           const res = await fetch("http://localhost:8000/scrape", {
             method: "POST",
             body: formData,
           });
-  
-          console.log("📡 Response received", res);
-  
+
           if (res.ok) {
             const blob = await res.blob();
-            const fileUrl = URL.createObjectURL(blob);
-            downloadBtn.href = fileUrl;
+            sessionId = res.headers.get("x-session-id");
             downloadBtn.classList.remove("hidden");
             status.textContent = "✅ Scraping complete! Ready to download.";
           } else {
             const error = await res.json();
             status.textContent = `❌ Failed: ${error.error}`;
-            console.error("❌ Error:", error);
           }
         } catch (err) {
           status.textContent = `❌ Network error.`;
           console.error(err);
         }
-  
+
         btnText.textContent = "Scrape";
         spinner.classList.add("hidden");
         scrapeBtn.disabled = false;
       });
+
+      downloadBtn.onclick = async () => {
+        if (!sessionId) {
+          status.textContent = "❌ Session ID missing.";
+          return;
+        }
+
+        try {
+          const res = await fetch("http://localhost:8000/download-clean", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ session_id: sessionId }),
+          });
+
+          if (res.ok) {
+            const blob = await res.blob();
+            const url = window.URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "scraped_output.pdf";
+            a.target = "_blank";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            status.textContent = "✅ PDF downloaded and session cleaned up.";
+          } else {
+            const error = await res.json();
+            status.textContent = `❌ Download failed: ${error.error}`;
+          }
+        } catch (err) {
+          console.error(err);
+          status.textContent = "❌ Network error during download.";
+        }
+      };
+
+      document.getElementById('chat-icon').addEventListener('click', () => {
+        const box = document.getElementById('chat-box');
+        box.style.display = box.style.display === 'none' ? 'block' : 'none';
+      });
     });
   </script>
-<!-- Chat Widget -->
-<img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
-
-<div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
-  <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
-</div>
-
-<script>
-  const icon = document.getElementById('chat-icon');
-  const box = document.getElementById('chat-box');
-  icon.addEventListener('click', () => {
-    box.style.display = box.style.display === 'none' ? 'block' : 'none';
-  });
-</script>  
-
 </body>
 </html>

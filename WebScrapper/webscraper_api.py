@@ -4,8 +4,8 @@ import base64
 import shutil
 import uuid
 import requests
-from fastapi import FastAPI, Form
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -14,10 +14,23 @@ from urllib.parse import urljoin
 from selenium.webdriver.common.by import By
 from concurrent.futures import ThreadPoolExecutor
 from pypdf import PdfWriter
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
-# Setup Chrome driver once for reuse
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5500",
+        "http://127.0.0.1:5500"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 chrome_options = Options()
 chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--disable-gpu")
@@ -53,11 +66,9 @@ async def scrape_website(url: str = Form(...), threads: int = Form(5)):
         try:
             driver = webdriver.Chrome(options=chrome_options)
             driver.get(link)
-
             WebDriverWait(driver, 10).until(
                 lambda d: d.execute_script("return document.readyState") == "complete"
             )
-
             time.sleep(2)
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(1)
@@ -73,7 +84,6 @@ async def scrape_website(url: str = Form(...), threads: int = Form(5)):
                 f.write(base64.b64decode(pdf_data['data']))
 
             return pdf_file if os.path.exists(pdf_file) else None
-
         except Exception as e:
             print(f"Error processing {link}: {e}")
             return None
@@ -81,7 +91,6 @@ async def scrape_website(url: str = Form(...), threads: int = Form(5)):
             if driver:
                 driver.quit()
 
-    # Run multithreaded PDF generation
     pdf_files = []
     with ThreadPoolExecutor(max_workers=threads) as executor:
         futures = [executor.submit(process_page, i + 1, link) for i, link in enumerate(links)]
@@ -97,15 +106,46 @@ async def scrape_website(url: str = Form(...), threads: int = Form(5)):
         writer = PdfWriter()
         for pdf in sorted(pdf_files, key=lambda x: int(os.path.basename(x).split('_')[1].split('.')[0])):
             writer.append(pdf)
-
         writer.write(output_pdf_path)
         writer.close()
     except Exception as e:
         return JSONResponse(content={"error": f"Failed to merge PDFs: {e}"}, status_code=500)
 
-    # ✅ Return the PDF file for download
-    return FileResponse(
-        output_pdf_path,
+    return StreamingResponse(
+        open(output_pdf_path, "rb"),
         media_type="application/pdf",
-        filename="scraped_output.pdf"
+        headers={
+            "Content-Disposition": "attachment; filename=scraped_output.pdf",
+            "x-session-id": session_id
+        }
     )
+
+@app.post("/download-clean")
+async def download_and_cleanup(request: Request):
+    data = await request.json()
+    session_id = data.get("session_id")
+
+    if not session_id:
+        return JSONResponse(content={"error": "Missing session_id"}, status_code=400)
+
+    output_folder = os.path.join("sessions", session_id)
+    pdf_path = os.path.join(output_folder, "scraped_output.pdf")
+
+    if not os.path.exists(pdf_path):
+        return JSONResponse(content={"error": "PDF not found"}, status_code=404)
+
+    def cleanup():
+        try:
+            shutil.rmtree(output_folder)
+            print(f"✅ Cleaned session: {session_id}")
+        except Exception as e:
+            print(f"⚠️ Failed cleanup: {e}")
+
+    def file_iterator():
+        with open(pdf_path, "rb") as f:
+            yield from f
+        cleanup()
+
+    return StreamingResponse(file_iterator(), media_type="application/pdf", headers={
+        "Content-Disposition": "attachment; filename=scraped_output.pdf"
+    })
