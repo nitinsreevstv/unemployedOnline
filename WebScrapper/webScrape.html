@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Scraping Service - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="services.html" class="text-indigo-600 font-semibold">Services</a>
+        <a href="about-us.html" class="hover:text-indigo-600">About Us</a>
+        <a href="ourTeam.html" class="hover:text-indigo-600">Our Team</a>
+        <a href="./LogIn/contact-us.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-indigo-600 to-green-500 text-white py-20 text-center">
+    <h1 class="text-4xl font-bold mb-4">Web Scraping Made Simple</h1>
+    <p class="max-w-2xl mx-auto text-lg">Extract meaningful data from any public website effortlessly. Whether it's job listings, product data, or news articles — we've got it covered.</p>
+  </section>
+
+  <!-- What is Web Scraping -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/6062/6062641.png" alt="Web Scraping Illustration" class="w-full">
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">What is Web Scraping?</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Web scraping is an automated technique used to extract large amounts of data from websites quickly and efficiently. 
+          It helps you gather insights, monitor competitors, build datasets, and save time on manual copy-pasting.
+        </p>
+        <ul class="mt-6 list-disc list-inside text-gray-700">
+          <li>✅ Extract data from HTML pages</li>
+          <li>✅ Parse tables, images, and lists</li>
+          <li>✅ Structure data into CSV/Excel/JSON</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scraper Form -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Submit a Website to Scrape</h2>
+      <form id="scrape-form" class="space-y-4">
+        <input 
+          type="url" 
+          name="url" 
+          required 
+          placeholder="https://example.com" 
+          class="w-full px-4 py-3 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        >
+
+        <button id="scrape-btn" type="submit"
+          class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 transition inline-flex items-center justify-center">
+          <span id="btn-text">Scrape</span>
+          <svg id="spinner" class="animate-spin ml-2 h-5 w-5 hidden text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+              d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+        </button>
+
+        <p id="status" class="text-sm text-gray-600 mt-4 hidden">⏳ Scraping in progress...</p>
+
+        <a id="download-btn" href="#" download="scraped_output.pdf"
+          class="hidden mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+          ⬇️ Download PDF
+        </a>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="../img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="../index.html" class="hover:text-indigo-500">Home</a>
+        <a href="../services.html" class="hover:text-indigo-500">Services</a>
+        <a href="../about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+        <a href="./LogIn/contact-us.html" class="hover:text-indigo-500">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WebBot -->
+  <img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+  <div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
+    <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+
+  <!-- JavaScript for scraping logic -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("scrape-form");
+      const status = document.getElementById("status");
+      const scrapeBtn = document.getElementById("scrape-btn");
+      const btnText = document.getElementById("btn-text");
+      const spinner = document.getElementById("spinner");
+      const downloadBtn = document.getElementById("download-btn");
+  
+      if (!form) {
+        console.error("❌ Form not found!");
+        return;
+      }
+  
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        console.log("✅ Form submitted");
+  
+        const formData = new FormData(form);
+  
+        status.textContent = "⏳ Scraping in progress...";
+        status.classList.remove("hidden");
+        btnText.textContent = "Scraping...";
+        spinner.classList.remove("hidden");
+        scrapeBtn.disabled = true;
+        downloadBtn.classList.add("hidden");
+  
+        try {
+          const res = await fetch("http://localhost:8000/scrape", {
+            method: "POST",
+            body: formData,
+          });
+  
+          console.log("📡 Response received", res);
+  
+          if (res.ok) {
+            const blob = await res.blob();
+            const fileUrl = URL.createObjectURL(blob);
+            downloadBtn.href = fileUrl;
+            downloadBtn.classList.remove("hidden");
+            status.textContent = "✅ Scraping complete! Ready to download.";
+          } else {
+            const error = await res.json();
+            status.textContent = `❌ Failed: ${error.error}`;
+            console.error("❌ Error:", error);
+          }
+        } catch (err) {
+          status.textContent = `❌ Network error.`;
+          console.error(err);
+        }
+  
+        btnText.textContent = "Scrape";
+        spinner.classList.add("hidden");
+        scrapeBtn.disabled = false;
+      });
+    });
+  </script>
+<!-- Chat Widget -->
+<img id="chat-icon" src="https://nitinsreevstv.github.io/WebBot_frontend/assets/webbot.png" width="60" class="fixed bottom-4 right-4 cursor-pointer z-50">
+
+<div id="chat-box" style="display:none;" class="fixed bottom-20 right-4 w-80 h-[500px] rounded-lg overflow-hidden shadow-xl z-50">
+  <iframe src="https://nitinsreevstv.github.io/WebBot_frontend/" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<script>
+  const icon = document.getElementById('chat-icon');
+  const box = document.getElementById('chat-box');
+  icon.addEventListener('click', () => {
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  });
+</script>  
+
+</body>
+</html>
