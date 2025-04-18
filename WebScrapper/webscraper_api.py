@@ -35,6 +35,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--disable-gpu")
 
+
 @app.post("/scrape")
 async def scrape_website(url: str = Form(...), threads: int = Form(5)):
     session_id = str(uuid.uuid4())
