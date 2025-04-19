@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merge PDFs - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="../index.html" class="hover:text-indigo-600">Home</a>
+        <a href="../services.html" class="text-indigo-600 font-semibold">Services</a>
+        <a href="../about-us.html" class="hover:text-indigo-600">About Us</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-600">Our Team</a>
+        <a href="../LogIn/contact-us.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-indigo-600 to-green-500 text-white py-20 text-center">
+    <h1 class="text-4xl font-bold mb-4">Free PDF Merge Tool</h1>
+    <p class="max-w-2xl mx-auto text-lg">Combine multiple PDF files into a single document with ease. Upload, merge, and download — all free!</p>
+  </section>
+
+  <!-- Upload Form -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Upload PDF Files</h2>
+      <form id="merge-form" class="space-y-4">
+        <input 
+          type="file" 
+          name="files" 
+          id="pdf-files" 
+          multiple 
+          accept="application/pdf" 
+          required
+          class="block w-full px-4 py-3 text-sm border rounded cursor-pointer"
+        >
+
+        <button id="merge-btn" type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 transition inline-flex items-center justify-center">
+          <span id="merge-text">Merge PDFs</span>
+          <svg id="merge-spinner" class="animate-spin ml-2 h-5 w-5 hidden text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+        </button>
+
+        <p id="merge-status" class="text-sm text-gray-600 mt-4 hidden">⏳ Merging PDFs...</p>
+
+        <a id="download-merged-btn" href="#" download="merged.pdf" class="hidden mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+          ⬇️ Download Merged PDF
+        </a>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x--2">
+          <img src="../img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="../index.html" class="hover:text-indigo-500">Home</a>
+        <a href="../services.html" class="hover:text-indigo-500">Services</a>
+        <a href="../about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+        <a href="../LogIn/contact-us.html" class="hover:text-indigo-500">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("merge-form");
+      const status = document.getElementById("merge-status");
+      const mergeBtn = document.getElementById("merge-btn");
+      const mergeText = document.getElementById("merge-text");
+      const spinner = document.getElementById("merge-spinner");
+      const downloadBtn = document.getElementById("download-merged-btn");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const files = document.getElementById("pdf-files").files;
+        const formData = new FormData();
+
+        for (let i = 0; i < files.length; i++) {
+          formData.append("files", files[i]);
+        }
+
+        status.textContent = "⏳ Merging PDFs...";
+        status.classList.remove("hidden");
+        mergeText.textContent = "Merging...";
+        spinner.classList.remove("hidden");
+        mergeBtn.disabled = true;
+        downloadBtn.classList.add("hidden");
+
+        try {
+          const res = await fetch("https://websrapper.onrender.com/merge", {
+            method: "POST",
+            body: formData
+          });
+
+          if (res.ok) {
+            const blob = await res.blob();
+            const url = URL.createObjectURL(blob);
+            downloadBtn.href = url;
+            downloadBtn.classList.remove("hidden");
+            status.textContent = "✅ Merge complete! Click to download.";
+          } else {
+            const error = await res.json();
+            status.textContent = `❌ Failed: ${error.error}`;
+          }
+        } catch (err) {
+          status.textContent = `❌ Network error.`;
+          console.error(err);
+        }
+
+        mergeText.textContent = "Merge PDFs";
+        spinner.classList.add("hidden");
+        mergeBtn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
