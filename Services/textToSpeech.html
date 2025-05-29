@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text-to-Speech with Background Music - UnemployedOnline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-700">Unemployed<span class="text-green-500">Online</span></a>
+      <nav class="space-x-6">
+        <a href="../index.html" class="hover:text-indigo-600">Home</a>
+        <a href="../services.html" class="text-indigo-600 font-semibold">Services</a>
+        <a href="../about-us.html" class="hover:text-indigo-600">About Us</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-600">Our Team</a>
+        <a href="../LogIn/contact-us.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-indigo-600 to-green-500 text-white py-20 text-center">
+    <h1 class="text-4xl font-bold mb-4">Text-to-Speech with Background Music</h1>
+    <p class="max-w-2xl mx-auto text-lg">Paste text, pick a voice, add background music, and download your custom voiceover instantly.</p>
+  </section>
+
+  <!-- Form Section -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Generate Your Audio</h2>
+      <form id="tts-form" class="space-y-4" enctype="multipart/form-data">
+        <textarea name="text" placeholder="Enter your text (English or Hindi only)..." required rows="4" class="w-full p-3 border rounded focus:outline-none focus:ring"></textarea>
+
+        <div>
+          <label for="voice" class="block text-left font-medium">Select Voice</label>
+          <select name="voice" id="voice" required class="w-full mt-1 p-2 border rounded">
+            <option value="male_en">Male - English</option>
+            <option value="female_en">Female - English</option>
+            <option value="male_hi">Male - Hindi</option>
+            <option value="female_hi">Female - Hindi</option>
+          </select>
+          <button type="button" onclick="playSampleVoice()" class="text-sm text-indigo-600 mt-1">▶️ Play Sample</button>
+        </div>
+
+        <div>
+          <label for="bgmusic" class="block text-left font-medium">Background Music</label>
+          <input type="file" name="bgmusic" id="bgmusic" accept="audio/*" required class="block w-full mt-1 border rounded p-2" />
+          <audio id="bg-audio" class="mt-2 w-full" controls style="display:none;"></audio>
+        </div>
+
+        <div>
+          <label for="format" class="block text-left font-medium">Output Format</label>
+          <select name="format" id="format" required class="w-full mt-1 p-2 border rounded">
+            <option value="mp3">MP3</option>
+            <option value="wav">WAV</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded">Generate Audio</button>
+      </form>
+
+      <div id="output-section" class="mt-6 hidden">
+        <h3 class="text-lg font-semibold mb-2">🔊 Preview</h3>
+        <audio id="preview-audio" controls class="w-full"></audio>
+        <a id="download-link" href="#" download class="mt-4 inline-block w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">⬇️ Download Audio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-700 py-10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="../img/logo.png" alt="Logo" class="h-8">
+          <span class="font-bold text-lg">Unemployed<span class="text-green-500">Online</span></span>
+        </div>
+        <p class="mt-2 text-sm">© 2024 UnemployedOnline. All rights reserved.</p>
+      </div>
+      <div class="mt-6 md:mt-0 space-x-4">
+        <a href="../index.html" class="hover:text-indigo-500">Home</a>
+        <a href="../services.html" class="hover:text-indigo-500">Services</a>
+        <a href="../about-us.html" class="hover:text-indigo-500">About Us</a>
+        <a href="../ourTeam.html" class="hover:text-indigo-500">Our Team</a>
+        <a href="../LogIn/contact-us.html" class="hover:text-indigo-500">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const bgInput = document.getElementById("bgmusic");
+    const bgAudio = document.getElementById("bg-audio");
+    bgInput.addEventListener("change", () => {
+      const file = bgInput.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        bgAudio.src = url;
+        bgAudio.style.display = "block";
+      }
+    });
+
+    function playSampleVoice() {
+      const voice = document.getElementById("voice").value;
+      const sampleMap = {
+        male_en: "samples/male_en.mp3",
+        female_en: "samples/female_en.mp3",
+        male_hi: "samples/male_hi.mp3",
+        female_hi: "samples/female_hi.mp3"
+      };
+      const audio = new Audio(sampleMap[voice]);
+      audio.play();
+    }
+
+    const form = document.getElementById("tts-form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const outputSection = document.getElementById("output-section");
+      const previewAudio = document.getElementById("preview-audio");
+      const downloadLink = document.getElementById("download-link");
+
+      outputSection.classList.add("hidden");
+
+      try {
+        const res = await fetch("/generate-voice-mix", {
+          method: "POST",
+          body: formData
+        });
+
+        if (res.ok) {
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          previewAudio.src = url;
+          downloadLink.href = url;
+          outputSection.classList.remove("hidden");
+        } else {
+          alert("❌ Failed to generate audio. Please try again.");
+        }
+      } catch (err) {
+        alert("❌ Network error. Please try again later.");
+        console.error(err);
+      }
+    });
+  </script>
+
+</body>
+</html>
